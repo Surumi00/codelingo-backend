@@ -36,7 +36,8 @@ function signToken(userId: string) {
 
 // POST /auth/register
 export async function register(req: Request, res: Response) {
-    const { email, password, name } = req.body as {
+    try{
+        const { email, password, name } = req.body as {
         email?: string;
         password?: string;
         name?: string;
@@ -67,6 +68,12 @@ export async function register(req: Request, res: Response) {
     const token = signToken(createdUser.id);
 
     res.status(201).json({ user: createdUser, token });
+    }
+    catch (error) {
+        console.error("Error during registration:", error);
+        res.status(500).json({ error: { message: "Internal server error" } });
+    }
+    
 }
 
 // POST /auth/login
