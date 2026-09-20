@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { db } from "../db/index.js";
 import { users } from "../db/schema.js";
+import type { AuthRequest } from "../middleware/authMiddleware.js";
 
 const JWT_SECRET = process.env.JWT_SECRET as string;
 const JWT_EXPIRES_IN = "7d";
@@ -32,6 +33,28 @@ const userResponseColumns = {
 
 function signToken(userId: string) {
     return jwt.sign({ sub: userId }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+}
+
+
+export async function getMe(req: AuthRequest, res: Response) {
+    if (!req.userId) {
+        return res.status(401).json({
+            error: { message: "Unauthorized" },
+        });
+    }
+
+    const [user] = await db
+        .select(userResponseColumns)
+        .from(users)
+        .where(eq(users.id, req.userId));
+
+    if (!user) {
+        return res.status(404).json({
+            error: { message: "User not found" },
+        });
+    }
+
+    res.json({ user });
 }
 
 // POST /auth/register
