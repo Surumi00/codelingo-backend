@@ -8,6 +8,13 @@
       "when": 1786293190476,
       "tag": "0000_white_ikaris",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789963904537,
+      "tag": "0001_romantic_metal_master",
+      "breakpoints": true
     }
   ]
 }
