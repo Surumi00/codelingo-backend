@@ -8,6 +8,9 @@ import {
   text,
   timestamp,
   unique,
+  serial,
+  varchar,
+  jsonb,
 } from "drizzle-orm/pg-core";
 
 // ─────────────────────────────────────────────
@@ -228,6 +231,39 @@ export const syllabusConcepts = pgTable(
     index("syllabus_concepts_topic_id_idx").on(table.topicId),
   ],
 );
+
+
+
+//   diagnostic Questions
+
+
+export const diagnosticQuestions = pgTable("diagnostic_questions", {
+  id: serial("id").primaryKey(),
+
+  conceptSlug: varchar("concept_slug", { length: 100 }).notNull(),
+
+  difficulty: varchar("difficulty", { length: 20 }).notNull(),
+
+  prompt: text("prompt").notNull(),
+
+  options: jsonb("options").$type<string[]>().notNull(),
+
+  correctOptionIndex: integer("correct_option_index").notNull(),
+
+  explanation: text("explanation").notNull(),
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ─────────────────────────────────────────────
 // Syllabus Types
