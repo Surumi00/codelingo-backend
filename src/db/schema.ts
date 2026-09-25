@@ -265,6 +265,68 @@ export const diagnosticQuestions = pgTable("diagnostic_questions", {
   explanation: text("explanation").notNull(),
 });
 
+// ─────────────────────────────────────────────
+// Diagnostic Attempts
+// ─────────────────────────────────────────────
+
+export const diagnosticAttempts = pgTable(
+  "diagnostic_attempts",
+  {
+    id: text("id")
+      .primaryKey()
+      .$defaultFn(() => createId()),
+
+    userId: text("user_id").notNull(),
+
+    score: integer("score").notNull(),
+
+    totalQuestions: integer("total_questions").notNull(),
+
+    percentage: integer("percentage").notNull(),
+
+    placementLevel: skillLevelEnum("placement_level").notNull(),
+
+    startingSyllabusLevelId: text("starting_syllabus_level_id").notNull(),
+
+    review: text("review").notNull(),
+
+    breakdown: jsonb("breakdown")
+      .$type<Record<string, { correct: number; total: number }>>()
+      .notNull(),
+
+    createdAt: timestamp("created_at", {
+      withTimezone: true,
+    })
+      .defaultNow()
+      .notNull(),
+
+    updatedAt: timestamp("updated_at", {
+      withTimezone: true,
+    })
+      .defaultNow()
+      .notNull()
+      .$onUpdateFn(() => new Date()),
+  },
+  (table) => [
+    foreignKey({
+      columns: [table.userId],
+      foreignColumns: [users.id],
+      name: "diagnostic_attempts_user_id_fk",
+    }),
+
+    foreignKey({
+      columns: [table.startingSyllabusLevelId],
+      foreignColumns: [syllabusLevels.id],
+      name: "diagnostic_attempts_starting_syllabus_level_id_fk",
+    }),
+
+    index("diagnostic_attempts_user_id_idx").on(table.userId),
+  ],
+);
+
+export type DiagnosticAttempt = typeof diagnosticAttempts.$inferSelect;
+export type NewDiagnosticAttempt = typeof diagnosticAttempts.$inferInsert;
+
 
 
 
