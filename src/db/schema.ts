@@ -31,6 +31,14 @@ export const skillLevelEnum = pgEnum("skill_level", [
   "INTERMEDIATE",
   "ADVANCED",
 ]);
+export const experienceLevelEnum = pgEnum("experience_level", [
+  "STUDENT",
+  "BEGINNER",
+  "SOME_EXPERIENCE",
+  "EXPERIENCED",
+]);
+
+
 
 // ─────────────────────────────────────────────
 // Users
@@ -64,6 +72,10 @@ export const users = pgTable(
     lastActiveDate: timestamp("last_active_date", {
       withTimezone: true,
     }),
+
+    occupation: text("occupation"),
+
+    experienceLevel: experienceLevelEnum("experience_level"),
 
     placementReadinessScore: integer("placement_readiness_score")
       .default(0)
