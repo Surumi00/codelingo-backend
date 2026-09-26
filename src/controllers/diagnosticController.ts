@@ -8,7 +8,7 @@ import {
 } from "../db/schema.js";
 import type { AuthRequest } from "../middleware/authMiddleware.js";
 import { placementLevelFromPercentage } from "../services/placementService.js";
-import { generateDiagnosticReview } from "../services/aiReviewService.js";
+import { generateReview } from "../services/reviewService.js";
 
 const DIAGNOSTIC_QUESTION_COUNT = 15;
 
@@ -203,13 +203,7 @@ export async function submitDiagnostic(req: AuthRequest, res: Response) {
       });
     }
 
-    const review = await generateDiagnosticReview({
-      score,
-      totalQuestions,
-      percentage,
-      placementLevel: level,
-      breakdown,
-    });
+    const review = await generateReview(score, breakdown, level);
 
     await db.insert(diagnosticAttempts).values({
       userId: req.userId,
