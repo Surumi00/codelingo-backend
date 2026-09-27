@@ -6,7 +6,7 @@ export type ConceptBreakdown = Record<
 >;
 
 const AI_API_KEY = process.env.AI_API_KEY ?? process.env.OPENAI_API_KEY;
-const AI_MODEL = process.env.AI_MODEL ?? "gpt-4o-mini";
+const AI_MODEL = process.env.AI_MODEL ?? "cohere/north-mini-code:free";
 const AI_TIMEOUT_MS = 7000;
 
 interface ConceptRatio {
@@ -99,7 +99,7 @@ export async function generateReview(
 
     try {
       const response = await fetch(
-        "https://api.openai.com/v1/chat/completions",
+        "https://openrouter.ai/api/v1/chat/completions",
         {
           method: "POST",
           headers: {
