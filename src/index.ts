@@ -5,6 +5,7 @@ import { errorHandler } from "./middleware/errorHandler.js";
 import { authRouter } from "./routes/authRoutes.js";
 import meRouter from "./routes/meRouts.js";
 import diagnosticRouter from "./routes/diagnosticRoutes.js";
+import syllabusRouter from "./routes/syllabusRoutes.js";
 
 
 const app = express();
@@ -20,6 +21,7 @@ app.get("/health", (_req, res) => {
 app.use("/auth", authRouter);
 app.use("/me", meRouter);
 app.use("/diagnostic", diagnosticRouter);
+app.use("/api/syllabus", syllabusRouter);
 
 app.use(errorHandler);
 
