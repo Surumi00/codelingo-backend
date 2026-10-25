@@ -1,0 +1,140 @@
+{
+  "slug": "ci-cd",
+  "title": "CI/CD",
+  "conceptSlug": "ci-cd",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn the fundamentals of continuous integration and continuous delivery for Python projects.”",
+      "payload": {
+        "options": [
+          "Comparison Operators",
+          "CI/CD",
+          "Web Development — Django / Flask / FastAPI Deep Dive",
+          "DevOps — Ansible Modules"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to CI/CD."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “CI/CD” belong to?",
+      "payload": {
+        "options": [
+          "Packaging & Deployment",
+          "Python Basics",
+          "Strings",
+          "Data Structures"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "CI/CD is part of Packaging & Deployment."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: CI/CD",
+      "code": "project = {\"name\": \"demo\", \"version\": \"1.0\"}\nprint(project[\"name\"])",
+      "payload": {
+        "options": [
+          "demo",
+          "1.0",
+          "name",
+          "project"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"demo\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"1.0\".",
+      "code": "project = {\"name\": \"demo\"}\nprint(project[\"verison\"])",
+      "payload": {
+        "options": [
+          "print(project[\"version\"])",
+          "print(project.version)",
+          "print(project.get(\"name\"))",
+          "print(project.get(\"version\", \"1.0\"))"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"1.0\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1.0\".",
+      "payload": {
+        "template": "project = {\"version\": {{b1}}}\nprint(project[\"version\"])",
+        "bank": [
+          "\"1.0\"",
+          "1.0",
+          "\"demo\"",
+          "1"
+        ],
+        "blanks": {
+          "b1": [
+            "\"1.0\""
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"\\\"1.0\\\"\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Read a filename from a path.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from pathlib import Path"
+          },
+          {
+            "id": "l2",
+            "text": "path = Path(\"/tmp/demo.txt\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(path.name)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"demo.txt\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice CI/CD: write a function file_name that returns the final file name from a path.",
+      "payload": {
+        "starterCode": "def file_name(path):\n    pass",
+        "functionName": "file_name",
+        "tests": [
+          {
+            "input": [
+              "a/b/c.txt"
+            ],
+            "expected": "c.txt"
+          },
+          {
+            "input": [
+              "name.py"
+            ],
+            "expected": "name.py"
+          },
+          {
+            "input": [
+              "/tmp/x"
+            ],
+            "expected": "x"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef file_name(path):\n    return path.rsplit(\"/\", 1)[-1]\n```"
+    }
+  ]
+}

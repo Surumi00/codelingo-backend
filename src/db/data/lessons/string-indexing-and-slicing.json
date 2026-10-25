@@ -1,0 +1,154 @@
+{
+  "slug": "string-indexing-and-slicing",
+  "title": "Indexing and Slicing",
+  "conceptSlug": "string-indexing-and-slicing",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to access individual characters and portions of strings.”",
+      "payload": {
+        "options": [
+          "Reading Text Files",
+          "Indexing and Slicing",
+          "finally",
+          "Basic Operations on Collections"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Indexing and Slicing."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Indexing and Slicing” belong to?",
+      "payload": {
+        "options": [
+          "Strings",
+          "Data Structures",
+          "Modules & Packages — Basics",
+          "Testing — Introduction"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Indexing and Slicing is part of Strings."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Indexing and Slicing",
+      "code": "word = \"python\"\nprint(word[0] + word[-1])",
+      "payload": {
+        "options": [
+          "pn",
+          "py",
+          "po",
+          "python"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"pn\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Hello, Ada\".",
+      "code": "name = \"Ada\"\nprint(\"Hello, \" + name",
+      "payload": {
+        "options": [
+          "print(\"Hello, \" + Name)",
+          "print(Hello + name)",
+          "print(\"Hello, \" name)",
+          "print(\"Hello, \" + name)"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"Hello, Ada\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"HELLO\".",
+      "payload": {
+        "template": "text = \"hello\"\nprint(text.{{b1}}())",
+        "bank": [
+          "upper",
+          "lower",
+          "title",
+          "strip"
+        ],
+        "blanks": {
+          "b1": [
+            "upper"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"upper\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Join two strings and print the result.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "first = \"code\""
+          },
+          {
+            "id": "l2",
+            "text": "second = \"lingo\""
+          },
+          {
+            "id": "l3",
+            "text": "print(first + second)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"codelingo\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Indexing and Slicing: write a function first_item that returns the first item from a sequence.",
+      "payload": {
+        "starterCode": "def first_item(items):\n    pass",
+        "functionName": "first_item",
+        "tests": [
+          {
+            "input": [
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "expected": 1
+          },
+          {
+            "input": [
+              [
+                "a"
+              ]
+            ],
+            "expected": "a"
+          },
+          {
+            "input": [
+              [
+                [
+                  5,
+                  6
+                ]
+              ]
+            ],
+            "expected": [
+              5,
+              6
+            ]
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef first_item(items):\n    return items[0]\n```"
+    }
+  ]
+}

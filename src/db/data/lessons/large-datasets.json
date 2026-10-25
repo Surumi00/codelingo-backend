@@ -1,0 +1,149 @@
+{
+  "slug": "large-datasets",
+  "title": "Large Datasets",
+  "conceptSlug": "large-datasets",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn approaches for working efficiently with large datasets.”",
+      "payload": {
+        "options": [
+          "typing",
+          "Automation — BeautifulSoup",
+          "Large Datasets",
+          "pyproject.toml"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to Large Datasets."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Large Datasets” belong to?",
+      "payload": {
+        "options": [
+          "Functions — Basics",
+          "Data Handling & Analysis",
+          "Design & Architecture",
+          "Operators"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "Large Datasets is part of Data Handling & Analysis."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Large Datasets",
+      "code": "values = [1, 2, 3]\nprint(sum(values) / len(values))",
+      "payload": {
+        "options": [
+          "2",
+          "6",
+          "3.0",
+          "2.0"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"2.0\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"2.0\".",
+      "code": "values = [1, 2, 3]\nprint(sum(values) / len(value))",
+      "payload": {
+        "options": [
+          "print(sum(values) / len(values))",
+          "print(sum(values) / sum(values))",
+          "print(len(values) / sum(values))",
+          "print(sum(value))"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"2.0\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"2.0\".",
+      "payload": {
+        "template": "values = [1, 2, 3]\nprint(sum(values) / {{b1}}(values))",
+        "bank": [
+          "len",
+          "sum",
+          "max",
+          "min"
+        ],
+        "blanks": {
+          "b1": [
+            "len"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"len\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Total a list of rows.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "rows = [1, 2, 3]"
+          },
+          {
+            "id": "l2",
+            "text": "total = sum(rows)"
+          },
+          {
+            "id": "l3",
+            "text": "print(total)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"6\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Large Datasets: write a function mean that returns the average of a list of numbers.",
+      "payload": {
+        "starterCode": "def mean(values):\n    pass",
+        "functionName": "mean",
+        "tests": [
+          {
+            "input": [
+              [
+                2,
+                4,
+                6
+              ]
+            ],
+            "expected": 4
+          },
+          {
+            "input": [
+              [
+                10
+              ]
+            ],
+            "expected": 10
+          },
+          {
+            "input": [
+              [
+                0,
+                0
+              ]
+            ],
+            "expected": 0
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef mean(values):\n    return sum(values) / len(values)\n```"
+    }
+  ]
+}

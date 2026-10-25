@@ -1,0 +1,145 @@
+{
+  "slug": "dictionaries",
+  "title": "Dictionaries",
+  "conceptSlug": "dictionaries",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how dictionaries store data as key-value pairs.”",
+      "payload": {
+        "options": [
+          "Substitution",
+          "Dictionaries",
+          "Lambda Functions",
+          "Basic Package Structure"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Dictionaries."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Dictionaries” belong to?",
+      "payload": {
+        "options": [
+          "Data Structures",
+          "Modules & Packages — Basics",
+          "Testing — Introduction",
+          "Advanced Exception Handling"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Dictionaries is part of Data Structures."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Dictionaries",
+      "code": "items = [1, 2, 3]\nitems.append(4)\nprint(len(items))",
+      "payload": {
+        "options": [
+          "4",
+          "3",
+          "5",
+          "[1, 2, 3, 4]"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"4\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "items = [1, 2, 3]\nprint(items[3])",
+      "payload": {
+        "options": [
+          "print(items[0])",
+          "print(items[1])",
+          "print(items)",
+          "print(items[2])"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "data = {\"a\": 1}\nprint(data[{{b1}}])",
+        "bank": [
+          "\"a\"",
+          "1",
+          "data",
+          "\"b\""
+        ],
+        "blanks": {
+          "b1": [
+            "\"a\""
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"\\\"a\\\"\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Append a value to a list and print it.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "items = [1, 2]"
+          },
+          {
+            "id": "l2",
+            "text": "items.append(3)"
+          },
+          {
+            "id": "l3",
+            "text": "print(items)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"[1, 2, 3]\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Dictionaries: write a function count_keys that returns how many keys are in a dictionary.",
+      "payload": {
+        "starterCode": "def count_keys(data):\n    pass",
+        "functionName": "count_keys",
+        "tests": [
+          {
+            "input": [
+              {
+                "a": 1,
+                "b": 2
+              }
+            ],
+            "expected": 2
+          },
+          {
+            "input": [
+              {}
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              {
+                "x": 10
+              }
+            ],
+            "expected": 1
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef count_keys(data):\n    return len(data)\n```"
+    }
+  ]
+}

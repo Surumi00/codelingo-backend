@@ -1,0 +1,153 @@
+{
+  "slug": "async-await",
+  "title": "async / await",
+  "conceptSlug": "async-await",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how async and await are used to write asynchronous Python code.”",
+      "payload": {
+        "options": [
+          "NumPy",
+          "TDD",
+          "async / await",
+          "Cython Basics"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to async / await."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “async / await” belong to?",
+      "payload": {
+        "options": [
+          "Operators",
+          "Concurrency & Parallelism",
+          "Data Handling & Analysis",
+          "Design & Architecture"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "async / await is part of Concurrency & Parallelism."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: async / await",
+      "code": "import threading\nresult = []\nt = threading.Thread(target=lambda: result.append(1))\nt.start()\nt.join()\nprint(result)",
+      "payload": {
+        "options": [
+          "[0]",
+          "1",
+          "[]",
+          "[1]"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"[1]\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"hi\".",
+      "code": "import threading\nt = threading.Thread(target=print, args=(\"hi\",))\nt.start\nt.join()",
+      "payload": {
+        "options": [
+          "t.start()",
+          "t.run()",
+          "t.start(1)",
+          "t.join()"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"hi\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"hi\".",
+      "payload": {
+        "template": "import threading\nt = threading.Thread(target={{b1}}, args=(\"hi\",))\nt.start()\nt.join()",
+        "bank": [
+          "print",
+          "input",
+          "str",
+          "len"
+        ],
+        "blanks": {
+          "b1": [
+            "print"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"print\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Run a tiny async function.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import asyncio"
+          },
+          {
+            "id": "l2",
+            "text": "async def main():"
+          },
+          {
+            "id": "l3",
+            "text": "    print(\"hi\")"
+          },
+          {
+            "id": "l4",
+            "text": "asyncio.run(main())"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"hi\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice async / await: write a function sum_list that returns the total of the numbers in a list.",
+      "payload": {
+        "starterCode": "def sum_list(numbers):\n    pass",
+        "functionName": "sum_list",
+        "tests": [
+          {
+            "input": [
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "expected": 6
+          },
+          {
+            "input": [
+              []
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              [
+                -2,
+                5,
+                1
+              ]
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef sum_list(numbers):\n    return sum(numbers)\n```"
+    }
+  ]
+}

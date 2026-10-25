@@ -1,0 +1,140 @@
+{
+  "slug": "enter-and-exit",
+  "title": "__enter__ and __exit__",
+  "conceptSlug": "enter-and-exit",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how __enter__ and __exit__ implement custom context manager behavior.”",
+      "payload": {
+        "options": [
+          "Debugging Concepts",
+          "Singleton",
+          "__enter__ and __exit__",
+          "sys"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to __enter__ and __exit__."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “__enter__ and __exit__” belong to?",
+      "payload": {
+        "options": [
+          "Networking & Web Development",
+          "Advanced File Handling",
+          "Testing & Debugging — Intermediate",
+          "Advanced Decorators & Metaprogramming"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "__enter__ and __exit__ is part of Advanced File Handling."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: __enter__ and __exit__",
+      "code": "import csv, io\nbuffer = io.StringIO()\nwriter = csv.writer(buffer)\nwriter.writerow([\"a\", \"b\"])\nprint(buffer.getvalue().strip())",
+      "payload": {
+        "options": [
+          "['a', 'b']",
+          "ab",
+          "a b",
+          "a,b"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"a,b\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"1\".",
+      "code": "import json\nprint(json.loads('{\"a\": 1}')[\"b\"])",
+      "payload": {
+        "options": [
+          "print(json.loads('{\"a\": 1}')[\"a\"])",
+          "print(json.load('{\"a\": 1}')[\"a\"])",
+          "print(json.loads({\"a\": 1})[\"a\"])",
+          "print(json.loads('{\"a\": 1}')[\"a\"]"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"1\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "import json\nprint(json.loads('{\"a\": {{b1}}}')[\"a\"])",
+        "bank": [
+          "1",
+          "2",
+          "a",
+          "0"
+        ],
+        "blanks": {
+          "b1": [
+            "1"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"1\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Parse JSON text and print one value.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import json"
+          },
+          {
+            "id": "l2",
+            "text": "data = json.loads('{\"a\": 1}')"
+          },
+          {
+            "id": "l3",
+            "text": "print(data[\"a\"])"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice __enter__ and __exit__: write a function line_count that returns the number of lines in a string.",
+      "payload": {
+        "starterCode": "def line_count(text):\n    pass",
+        "functionName": "line_count",
+        "tests": [
+          {
+            "input": [
+              "a\nb\nc"
+            ],
+            "expected": 3
+          },
+          {
+            "input": [
+              "one line"
+            ],
+            "expected": 1
+          },
+          {
+            "input": [
+              ""
+            ],
+            "expected": 0
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef line_count(text):\n    return len(text.splitlines())\n```"
+    }
+  ]
+}

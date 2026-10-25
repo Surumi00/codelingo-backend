@@ -1,0 +1,162 @@
+{
+  "slug": "polymorphism",
+  "title": "Polymorphism",
+  "conceptSlug": "polymorphism",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how different objects can respond to the same interface or operation.”",
+      "payload": {
+        "options": [
+          "Polymorphism",
+          "Generators and yield",
+          "CSV",
+          "SQLite / sqlite3"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to Polymorphism."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Polymorphism” belong to?",
+      "payload": {
+        "options": [
+          "Advanced File Handling",
+          "Testing & Debugging — Intermediate",
+          "Advanced Decorators & Metaprogramming",
+          "Object-Oriented Programming"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "Polymorphism is part of Object-Oriented Programming."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Polymorphism",
+      "code": "class Dog:\n    def __init__(self, name):\n        self.name = name\n\ndog = Dog(\"Rex\")\nprint(dog.name)",
+      "payload": {
+        "options": [
+          "None",
+          "Rex",
+          "Dog",
+          "name"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"Rex\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Rex\".",
+      "code": "class Dog:\n    def __init__(self, name)\n        self.name = name\n\ndog = Dog(\"Rex\")\nprint(dog.name)",
+      "payload": {
+        "options": [
+          "    def __init__(name):",
+          "    def __init__(self; name):",
+          "    def __init__(self, name):",
+          "    def init(self, name):"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"Rex\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"Mia\".",
+      "payload": {
+        "template": "class Cat:\n    def {{b1}}(self, name):\n        self.name = name\n\ncat = Cat(\"Mia\")\nprint(cat.name)",
+        "bank": [
+          "__init__",
+          "init",
+          "new",
+          "self"
+        ],
+        "blanks": {
+          "b1": [
+            "__init__"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"__init__\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Create a small class and print an attribute.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "class Box:"
+          },
+          {
+            "id": "l2",
+            "text": "    def __init__(self):"
+          },
+          {
+            "id": "l3",
+            "text": "        self.value = 1"
+          },
+          {
+            "id": "l4",
+            "text": "box = Box()"
+          },
+          {
+            "id": "l5",
+            "text": "print(box.value)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ]
+      },
+      "explanation": "Run in this order to print \"1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Polymorphism: write a function make_pair that returns a list containing a and b.",
+      "payload": {
+        "starterCode": "def make_pair(a, b):\n    pass",
+        "functionName": "make_pair",
+        "tests": [
+          {
+            "input": [
+              1,
+              2
+            ],
+            "expected": [
+              1,
+              2
+            ]
+          },
+          {
+            "input": [
+              "a",
+              "b"
+            ],
+            "expected": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef make_pair(a, b):\n    return [a, b]\n```"
+    }
+  ]
+}

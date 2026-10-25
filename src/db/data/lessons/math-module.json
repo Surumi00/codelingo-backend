@@ -1,0 +1,140 @@
+{
+  "slug": "math-module",
+  "title": "math",
+  "conceptSlug": "math-module",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn mathematical functions provided by the math module.”",
+      "payload": {
+        "options": [
+          "Factory",
+          "Coroutines",
+          "math",
+          "Logging Basics"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to math."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “math” belong to?",
+      "payload": {
+        "options": [
+          "Advanced Testing & Debugging",
+          "Standard Library",
+          "Advanced Iterators & Generators",
+          "Memory Management & Performance"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "math is part of Standard Library."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: math",
+      "code": "import math\nprint(math.floor(3.7))",
+      "payload": {
+        "options": [
+          "4",
+          "3.7",
+          "3.0",
+          "3"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"3\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "import math\nprint(math.flor(3.7))",
+      "payload": {
+        "options": [
+          "print(math.floor(3.7))",
+          "print(math.ceil(3.7))",
+          "print(floor(3.7))",
+          "print(math.floor[3.7])"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"seeded\".",
+      "payload": {
+        "template": "import random\nrandom.{{b1}}(1)\nprint(\"seeded\")",
+        "bank": [
+          "seed",
+          "choice",
+          "randint",
+          "shuffle"
+        ],
+        "blanks": {
+          "b1": [
+            "seed"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"seed\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Count letters with collections.Counter.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from collections import Counter"
+          },
+          {
+            "id": "l2",
+            "text": "counts = Counter(\"aba\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(counts[\"a\"])"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"2\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice math: write a function square that returns n squared.",
+      "payload": {
+        "starterCode": "def square(n):\n    pass",
+        "functionName": "square",
+        "tests": [
+          {
+            "input": [
+              3
+            ],
+            "expected": 9
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -4
+            ],
+            "expected": 16
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef square(n):\n    return n * n\n```"
+    }
+  ]
+}

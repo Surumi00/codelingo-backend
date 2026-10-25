@@ -1,0 +1,145 @@
+{
+  "slug": "requests",
+  "title": "requests",
+  "conceptSlug": "requests",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to use the requests library for HTTP communication.”",
+      "payload": {
+        "options": [
+          "Factory",
+          "requests",
+          "math",
+          "Logging Basics"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to requests."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “requests” belong to?",
+      "payload": {
+        "options": [
+          "Working with APIs & Databases",
+          "Advanced OOP",
+          "Concurrency & Parallelism",
+          "Data Handling & Analysis"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "requests is part of Working with APIs & Databases."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: requests",
+      "code": "payload = {\"ok\": True}\nprint(payload.get(\"ok\"))",
+      "payload": {
+        "options": [
+          "True",
+          "False",
+          "ok",
+          "None"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"True\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"unknown\".",
+      "code": "payload = {\"ok\": True}\nprint(payload[\"status\"])",
+      "payload": {
+        "options": [
+          "print(payload.get(\"ok\"))",
+          "print(payload.status)",
+          "print(payload.get[\"status\"])",
+          "print(payload.get(\"status\", \"unknown\"))"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"unknown\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"True\".",
+      "payload": {
+        "template": "payload = {\"ok\": True}\nprint(payload.{{b1}}(\"ok\"))",
+        "bank": [
+          "get",
+          "set",
+          "add",
+          "pop"
+        ],
+        "blanks": {
+          "b1": [
+            "get"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"get\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Create an in-memory SQLite table.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import sqlite3"
+          },
+          {
+            "id": "l2",
+            "text": "connection = sqlite3.connect(\":memory:\")"
+          },
+          {
+            "id": "l3",
+            "text": "connection.execute(\"CREATE TABLE t (n INTEGER)\")"
+          },
+          {
+            "id": "l4",
+            "text": "print(\"ready\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"ready\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice requests: write a function status_ok that returns True when status is a 2xx success code.",
+      "payload": {
+        "starterCode": "def status_ok(status):\n    pass",
+        "functionName": "status_ok",
+        "tests": [
+          {
+            "input": [
+              200
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              404
+            ],
+            "expected": false
+          },
+          {
+            "input": [
+              201
+            ],
+            "expected": true
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef status_ok(status):\n    return 200 <= status < 300\n```"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "publishing-to-pypi",
+  "title": "Publishing to PyPI",
+  "conceptSlug": "publishing-to-pypi",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn the basics of distributing Python packages through PyPI.”",
+      "payload": {
+        "options": [
+          "mypy",
+          "Automation — Web Scraping",
+          "Type Casting",
+          "Publishing to PyPI"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to Publishing to PyPI."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Publishing to PyPI” belong to?",
+      "payload": {
+        "options": [
+          "Strings",
+          "Data Structures",
+          "Packaging & Deployment",
+          "Python Basics"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "Publishing to PyPI is part of Packaging & Deployment."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Publishing to PyPI",
+      "code": "project = {\"name\": \"demo\", \"version\": \"1.0\"}\nprint(project[\"name\"])",
+      "payload": {
+        "options": [
+          "name",
+          "project",
+          "demo",
+          "1.0"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"demo\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"1.0\".",
+      "code": "project = {\"name\": \"demo\"}\nprint(project[\"verison\"])",
+      "payload": {
+        "options": [
+          "print(project.get(\"name\"))",
+          "print(project.get(\"version\", \"1.0\"))",
+          "print(project[\"version\"])",
+          "print(project.version)"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"1.0\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1.0\".",
+      "payload": {
+        "template": "project = {\"version\": {{b1}}}\nprint(project[\"version\"])",
+        "bank": [
+          "\"1.0\"",
+          "1.0",
+          "\"demo\"",
+          "1"
+        ],
+        "blanks": {
+          "b1": [
+            "\"1.0\""
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"\\\"1.0\\\"\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Read a filename from a path.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from pathlib import Path"
+          },
+          {
+            "id": "l2",
+            "text": "path = Path(\"/tmp/demo.txt\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(path.name)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"demo.txt\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Publishing to PyPI: write a function file_name that returns the final file name from a path.",
+      "payload": {
+        "starterCode": "def file_name(path):\n    pass",
+        "functionName": "file_name",
+        "tests": [
+          {
+            "input": [
+              "a/b/c.txt"
+            ],
+            "expected": "c.txt"
+          },
+          {
+            "input": [
+              "name.py"
+            ],
+            "expected": "name.py"
+          },
+          {
+            "input": [
+              "/tmp/x"
+            ],
+            "expected": "x"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef file_name(path):\n    return path.rsplit(\"/\", 1)[-1]\n```"
+    }
+  ]
+}

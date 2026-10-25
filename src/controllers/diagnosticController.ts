@@ -1,5 +1,5 @@
 import type { Response } from "express";
-import { eq, inArray } from "drizzle-orm";
+import { desc, eq, inArray } from "drizzle-orm";
 import { db } from "../db/index.js";
 import {
   diagnosticAttempts,
@@ -22,6 +22,22 @@ const safeQuestionColumns = {
 
 function titleCaseLevel(level: string): string {
   return level.charAt(0) + level.slice(1).toLowerCase();
+}
+
+function titleCaseConcept(slug: string): string {
+  return slug
+    .replace(/[-_]+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function conceptStatus(ratio: number): "Strong" | "Developing" | "Weak" {
+  if (ratio >= 0.75) return "Strong";
+  if (ratio >= 0.4) return "Developing";
+
+  return "Weak";
 }
 
 // GET /diagnostic/questions
@@ -51,6 +67,91 @@ export async function getDiagnosticQuestions(
     res.json({ questions: questions.slice(0, DIAGNOSTIC_QUESTION_COUNT) });
   } catch (error) {
     console.error("Error fetching diagnostic questions:", error);
+
+    res.status(500).json({ error: { message: "Internal server error" } });
+  }
+}
+
+// GET /diagnostic/result
+// Returns the most recent attempt for the signed-in user, or 404 when the
+// user has never completed the diagnostic. This is the single source of truth
+// for "has this user already been placed?" — attempts are persisted, so the
+// frontend only ever asks a user for the diagnostic once.
+export async function getDiagnosticResult(req: AuthRequest, res: Response) {
+  try {
+    if (!req.userId) {
+      return res.status(401).json({ error: { message: "Unauthorized" } });
+    }
+
+    const [attempt] = await db
+      .select({
+        id: diagnosticAttempts.id,
+        score: diagnosticAttempts.score,
+        totalQuestions: diagnosticAttempts.totalQuestions,
+        percentage: diagnosticAttempts.percentage,
+        level: diagnosticAttempts.placementLevel,
+        review: diagnosticAttempts.review,
+        breakdown: diagnosticAttempts.breakdown,
+        startingSyllabusLevelId: diagnosticAttempts.startingSyllabusLevelId,
+        startingSyllabusLevelTitle: syllabusLevels.title,
+        createdAt: diagnosticAttempts.createdAt,
+      })
+      .from(diagnosticAttempts)
+      .leftJoin(
+        syllabusLevels,
+        eq(
+          diagnosticAttempts.startingSyllabusLevelId,
+          syllabusLevels.id,
+        ),
+      )
+      .where(eq(diagnosticAttempts.userId, req.userId))
+      .orderBy(desc(diagnosticAttempts.createdAt))
+      .limit(1);
+
+    if (!attempt) {
+      return res.status(404).json({
+        error: { message: "No diagnostic attempt found" },
+      });
+    }
+
+    const breakdown = attempt.breakdown ?? {};
+
+    // Flatten the stored breakdown into the per-concept shape the profile
+    // page renders (score out of 5 plus a Strong/Developing/Weak status).
+    const concepts = Object.entries(breakdown).map(([slug, entry]) => {
+      const ratio = entry.total > 0 ? entry.correct / entry.total : 0;
+
+      return {
+        name: titleCaseConcept(slug),
+        correct: entry.correct,
+        total: entry.total,
+        score: Math.round(ratio * 5),
+        status: conceptStatus(ratio),
+      };
+    });
+
+    res.json({
+      id: attempt.id,
+      score: attempt.score,
+      scoreTotal: attempt.totalQuestions,
+      totalQuestions: attempt.totalQuestions,
+      questionsAnswered: attempt.totalQuestions,
+      percentage: attempt.percentage,
+      level: attempt.level,
+      insight: attempt.review,
+      review: attempt.review,
+      breakdown,
+      concepts,
+      startingSyllabusLevel: attempt.startingSyllabusLevelTitle
+        ? {
+            id: attempt.startingSyllabusLevelId,
+            title: attempt.startingSyllabusLevelTitle,
+          }
+        : null,
+      createdAt: attempt.createdAt,
+    });
+  } catch (error) {
+    console.error("Error fetching diagnostic result:", error);
 
     res.status(500).json({ error: { message: "Internal server error" } });
   }

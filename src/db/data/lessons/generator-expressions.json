@@ -1,0 +1,159 @@
+{
+  "slug": "generator-expressions",
+  "title": "Generator Expressions",
+  "conceptSlug": "generator-expressions",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to create generators using compact generator expressions.”",
+      "payload": {
+        "options": [
+          "GIL",
+          "Socket Programming",
+          "Generator Expressions",
+          "Descriptors"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to Generator Expressions."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Generator Expressions” belong to?",
+      "payload": {
+        "options": [
+          "Specialized Domains",
+          "Advanced Iterators & Generators",
+          "Memory Management & Performance",
+          "Advanced Testing & Debugging"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "Generator Expressions is part of Advanced Iterators & Generators."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Generator Expressions",
+      "code": "values = [1, 2]\nit = iter(values)\nprint(next(it))",
+      "payload": {
+        "options": [
+          "2",
+          "[1, 2]",
+          "iter",
+          "1"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"1\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"1\\n2\".",
+      "code": "values = [1, 2]\nit = iter(values)\nprint(next(it)\nprint(next(it))",
+      "payload": {
+        "options": [
+          "print(next(it))",
+          "print(next(values))",
+          "print(iter(it))",
+          "print(it)"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"1\\n2\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "values = [1, 2]\nit = {{b1}}(values)\nprint(next(it))",
+        "bank": [
+          "iter",
+          "next",
+          "list",
+          "range"
+        ],
+        "blanks": {
+          "b1": [
+            "iter"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"iter\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Create a generator and consume it.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "def count():"
+          },
+          {
+            "id": "l2",
+            "text": "    yield 1"
+          },
+          {
+            "id": "l3",
+            "text": "    yield 2"
+          },
+          {
+            "id": "l4",
+            "text": "print(list(count()))"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"[1, 2]\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Generator Expressions: write a function double_all that returns a new list where every number is doubled.",
+      "payload": {
+        "starterCode": "def double_all(numbers):\n    pass",
+        "functionName": "double_all",
+        "tests": [
+          {
+            "input": [
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "expected": [
+              2,
+              4,
+              6
+            ]
+          },
+          {
+            "input": [
+              []
+            ],
+            "expected": []
+          },
+          {
+            "input": [
+              [
+                -1,
+                0
+              ]
+            ],
+            "expected": [
+              -2,
+              0
+            ]
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef double_all(numbers):\n    return [n * 2 for n in numbers]\n```"
+    }
+  ]
+}

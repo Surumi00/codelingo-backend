@@ -1,0 +1,140 @@
+{
+  "slug": "os-module",
+  "title": "os",
+  "conceptSlug": "os-module",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to interact with the operating system using the os module.”",
+      "payload": {
+        "options": [
+          "Design Patterns",
+          "Generator Expressions",
+          "os",
+          "Better pytest Usage"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to os."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “os” belong to?",
+      "payload": {
+        "options": [
+          "Advanced Testing & Debugging",
+          "Standard Library",
+          "Advanced Iterators & Generators",
+          "Memory Management & Performance"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "os is part of Standard Library."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: os",
+      "code": "import math\nprint(math.floor(3.7))",
+      "payload": {
+        "options": [
+          "4",
+          "3.7",
+          "3.0",
+          "3"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"3\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "import math\nprint(math.flor(3.7))",
+      "payload": {
+        "options": [
+          "print(math.floor(3.7))",
+          "print(math.ceil(3.7))",
+          "print(floor(3.7))",
+          "print(math.floor[3.7])"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"seeded\".",
+      "payload": {
+        "template": "import random\nrandom.{{b1}}(1)\nprint(\"seeded\")",
+        "bank": [
+          "seed",
+          "choice",
+          "randint",
+          "shuffle"
+        ],
+        "blanks": {
+          "b1": [
+            "seed"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"seed\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Count letters with collections.Counter.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from collections import Counter"
+          },
+          {
+            "id": "l2",
+            "text": "counts = Counter(\"aba\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(counts[\"a\"])"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"2\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice os: write a function file_name that returns the final file name from a path.",
+      "payload": {
+        "starterCode": "def file_name(path):\n    pass",
+        "functionName": "file_name",
+        "tests": [
+          {
+            "input": [
+              "a/b/c.txt"
+            ],
+            "expected": "c.txt"
+          },
+          {
+            "input": [
+              "name.py"
+            ],
+            "expected": "name.py"
+          },
+          {
+            "input": [
+              "/tmp/x"
+            ],
+            "expected": "x"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef file_name(path):\n    return path.rsplit(\"/\", 1)[-1]\n```"
+    }
+  ]
+}

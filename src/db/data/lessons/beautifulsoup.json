@@ -1,0 +1,145 @@
+{
+  "slug": "beautifulsoup",
+  "title": "Automation — BeautifulSoup",
+  "conceptSlug": "beautifulsoup",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how BeautifulSoup can be used to parse and extract data from web pages.”",
+      "payload": {
+        "options": [
+          "Common String Methods",
+          "Automation — BeautifulSoup",
+          "int, float, str, and bool",
+          "if, elif, and else"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Automation — BeautifulSoup."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Automation — BeautifulSoup” belong to?",
+      "payload": {
+        "options": [
+          "Specialized Domains",
+          "Control Flow",
+          "Error Handling — Introduction",
+          "File Handling — Basic"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Automation — BeautifulSoup is part of Specialized Domains."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Automation — BeautifulSoup",
+      "code": "text = \"Python rocks\"\nprint(text.split()[0])",
+      "payload": {
+        "options": [
+          "Python",
+          "rocks",
+          "Python rocks",
+          "['Python', 'rocks']"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"Python\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Python\".",
+      "code": "text = \"Python rocks\"\nprint(text.split()[2])",
+      "payload": {
+        "options": [
+          "print(text.split()[1])",
+          "print(text.split)",
+          "print(text[0])",
+          "print(text.split()[0])"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"Python\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"['a', 'b', 'c']\".",
+      "payload": {
+        "template": "text = \"a,b,c\"\nprint(text.{{b1}}(\",\"))",
+        "bank": [
+          "split",
+          "join",
+          "strip",
+          "find"
+        ],
+        "blanks": {
+          "b1": [
+            "split"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"split\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Set up a tiny HTML parser.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from html.parser import HTMLParser"
+          },
+          {
+            "id": "l2",
+            "text": "class P(HTMLParser):"
+          },
+          {
+            "id": "l3",
+            "text": "    pass"
+          },
+          {
+            "id": "l4",
+            "text": "print(\"ready\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"ready\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Automation — BeautifulSoup: write a function status_ok that returns True when status is a 2xx success code.",
+      "payload": {
+        "starterCode": "def status_ok(status):\n    pass",
+        "functionName": "status_ok",
+        "tests": [
+          {
+            "input": [
+              200
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              404
+            ],
+            "expected": false
+          },
+          {
+            "input": [
+              201
+            ],
+            "expected": true
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef status_ok(status):\n    return 200 <= status < 300\n```"
+    }
+  ]
+}

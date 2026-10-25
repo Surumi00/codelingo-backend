@@ -1,0 +1,146 @@
+{
+  "slug": "datetime-module",
+  "title": "datetime",
+  "conceptSlug": "datetime-module",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to work with dates and times using the datetime module.”",
+      "payload": {
+        "options": [
+          "Abstract Base Classes",
+          "Custom Iterators",
+          "Class Decorators",
+          "datetime"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to datetime."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “datetime” belong to?",
+      "payload": {
+        "options": [
+          "Memory Management & Performance",
+          "Advanced Testing & Debugging",
+          "Standard Library",
+          "Advanced Iterators & Generators"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "datetime is part of Standard Library."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: datetime",
+      "code": "import math\nprint(math.floor(3.7))",
+      "payload": {
+        "options": [
+          "3.7",
+          "3.0",
+          "3",
+          "4"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"3\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "import math\nprint(math.flor(3.7))",
+      "payload": {
+        "options": [
+          "print(math.floor[3.7])",
+          "print(math.floor(3.7))",
+          "print(math.ceil(3.7))",
+          "print(floor(3.7))"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"seeded\".",
+      "payload": {
+        "template": "import random\nrandom.{{b1}}(1)\nprint(\"seeded\")",
+        "bank": [
+          "seed",
+          "choice",
+          "randint",
+          "shuffle"
+        ],
+        "blanks": {
+          "b1": [
+            "seed"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"seed\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Count letters with collections.Counter.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from collections import Counter"
+          },
+          {
+            "id": "l2",
+            "text": "counts = Counter(\"aba\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(counts[\"a\"])"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"2\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice datetime: write a function double that returns n times 2.",
+      "payload": {
+        "starterCode": "def double(n):\n    pass",
+        "functionName": "double",
+        "tests": [
+          {
+            "input": [
+              2
+            ],
+            "expected": 4
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -3
+            ],
+            "expected": -6
+          },
+          {
+            "input": [
+              10
+            ],
+            "expected": 20
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef double(n):\n    return n * 2\n```"
+    }
+  ]
+}

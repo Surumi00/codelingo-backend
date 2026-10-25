@@ -1,16 +1,31 @@
-import type { Request, Response } from "express";
+import type { Response } from "express";
 import { db } from "../db/index.js";
 import {
   syllabusConcepts,
   syllabusLevels,
   syllabusTopics,
 } from "../db/schema.js";
+import type { AuthRequest } from "../middleware/authMiddleware.js";
+import { computeLessonStatuses } from "../services/lessonStatusService.js";
+import {
+  getCompletedLessonIds,
+  getOrderedLessons,
+} from "../services/progressionService.js";
+
+interface LessonDto {
+  id: string;
+  title: string;
+  order: number;
+  xpReward: number;
+  status: "LOCKED" | "AVAILABLE" | "COMPLETED";
+}
 
 interface ConceptDto {
   id: string;
   title: string;
   description: string;
   conceptSlug: string;
+  lessons: LessonDto[];
 }
 
 interface TopicDto {
@@ -28,8 +43,12 @@ interface LevelDto {
 }
 
 // GET /api/syllabus
-export async function getSyllabus(_req: Request, res: Response) {
+export async function getSyllabus(req: AuthRequest, res: Response) {
   try {
+    if (!req.userId) {
+      return res.status(401).json({ error: { message: "Unauthorized" } });
+    }
+
     const levels = await db
       .select({
         id: syllabusLevels.id,
@@ -63,6 +82,25 @@ export async function getSyllabus(_req: Request, res: Response) {
       .from(syllabusConcepts)
       .orderBy(syllabusConcepts.topicId, syllabusConcepts.order);
 
+    const orderedLessons = await getOrderedLessons();
+    const completedLessonIds = await getCompletedLessonIds(req.userId);
+
+    const lessonsByConcept = new Map<string, LessonDto[]>();
+
+    for (const lesson of computeLessonStatuses(orderedLessons, completedLessonIds)) {
+      const list = lessonsByConcept.get(lesson.conceptId) ?? [];
+
+      list.push({
+        id: lesson.id,
+        title: lesson.title,
+        order: lesson.order,
+        xpReward: lesson.xpReward,
+        status: lesson.status,
+      });
+
+      lessonsByConcept.set(lesson.conceptId, list);
+    }
+
     const conceptsByTopic = new Map<string, ConceptDto[]>();
 
     for (const concept of concepts) {
@@ -73,6 +111,7 @@ export async function getSyllabus(_req: Request, res: Response) {
         title: concept.title,
         description: concept.description,
         conceptSlug: concept.conceptSlug,
+        lessons: lessonsByConcept.get(concept.id) ?? [],
       });
 
       conceptsByTopic.set(concept.topicId, list);

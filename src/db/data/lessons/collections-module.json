@@ -1,0 +1,145 @@
+{
+  "slug": "collections-module",
+  "title": "collections",
+  "conceptSlug": "collections-module",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn specialized collection types from the collections module.”",
+      "payload": {
+        "options": [
+          "__getattr__",
+          "collections",
+          "@property",
+          "__iter__"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to collections."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “collections” belong to?",
+      "payload": {
+        "options": [
+          "Standard Library",
+          "Advanced Iterators & Generators",
+          "Memory Management & Performance",
+          "Advanced Testing & Debugging"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "collections is part of Standard Library."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: collections",
+      "code": "import math\nprint(math.floor(3.7))",
+      "payload": {
+        "options": [
+          "3",
+          "4",
+          "3.7",
+          "3.0"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"3\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "import math\nprint(math.flor(3.7))",
+      "payload": {
+        "options": [
+          "print(math.ceil(3.7))",
+          "print(floor(3.7))",
+          "print(math.floor[3.7])",
+          "print(math.floor(3.7))"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"seeded\".",
+      "payload": {
+        "template": "import random\nrandom.{{b1}}(1)\nprint(\"seeded\")",
+        "bank": [
+          "seed",
+          "choice",
+          "randint",
+          "shuffle"
+        ],
+        "blanks": {
+          "b1": [
+            "seed"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"seed\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Count letters with collections.Counter.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from collections import Counter"
+          },
+          {
+            "id": "l2",
+            "text": "counts = Counter(\"aba\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(counts[\"a\"])"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"2\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice collections: write a function count_keys that returns how many keys are in a dictionary.",
+      "payload": {
+        "starterCode": "def count_keys(data):\n    pass",
+        "functionName": "count_keys",
+        "tests": [
+          {
+            "input": [
+              {
+                "a": 1,
+                "b": 2
+              }
+            ],
+            "expected": 2
+          },
+          {
+            "input": [
+              {}
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              {
+                "x": 10
+              }
+            ],
+            "expected": 1
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef count_keys(data):\n    return len(data)\n```"
+    }
+  ]
+}

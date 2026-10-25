@@ -1,0 +1,151 @@
+{
+  "slug": "logical-operators",
+  "title": "Logical Operators",
+  "conceptSlug": "logical-operators",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to combine and evaluate conditions using and, or, and not.”",
+      "payload": {
+        "options": [
+          "Logical Operators",
+          "String Basics",
+          "except",
+          "Dictionaries"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to Logical Operators."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Logical Operators” belong to?",
+      "payload": {
+        "options": [
+          "Functions — Basics",
+          "Functions — Intermediate",
+          "Virtual Environments & Package Management",
+          "Operators"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "Logical Operators is part of Operators."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Logical Operators",
+      "code": "x = 7\ny = 3\nprint(x // y)",
+      "payload": {
+        "options": [
+          "10",
+          "2",
+          "2.33",
+          "3"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"2\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"11\".",
+      "code": "print((5 + 2) * 3)",
+      "payload": {
+        "options": [
+          "print(5 * 2 + 3)",
+          "print(5 - 2 * 3)",
+          "print(5 + 2 * 3)",
+          "print(5 + 2 + 3)"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"11\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "print(10 {{b1}} 3)",
+        "bank": [
+          "%",
+          "/",
+          "//",
+          "*"
+        ],
+        "blanks": {
+          "b1": [
+            "%"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"%\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Calculate and print a total with tax.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "price = 10"
+          },
+          {
+            "id": "l2",
+            "text": "tax = 2"
+          },
+          {
+            "id": "l3",
+            "text": "total = price + tax"
+          },
+          {
+            "id": "l4",
+            "text": "print(total)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"12\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Logical Operators: write a function is_in_range that returns True when number is between low and high inclusive.",
+      "payload": {
+        "starterCode": "def is_in_range(number, low, high):\n    pass",
+        "functionName": "is_in_range",
+        "tests": [
+          {
+            "input": [
+              5,
+              1,
+              10
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              0,
+              1,
+              10
+            ],
+            "expected": false
+          },
+          {
+            "input": [
+              10,
+              1,
+              10
+            ],
+            "expected": true
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef is_in_range(number, low, high):\n    return low <= number <= high\n```"
+    }
+  ]
+}

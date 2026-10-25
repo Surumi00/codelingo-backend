@@ -1,0 +1,151 @@
+{
+  "slug": "for-loops",
+  "title": "for Loops",
+  "conceptSlug": "for-loops",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to iterate over sequences and other iterable objects.”",
+      "payload": {
+        "options": [
+          "for Loops",
+          "Parameters",
+          "List Methods",
+          "*args"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to for Loops."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “for Loops” belong to?",
+      "payload": {
+        "options": [
+          "Error Handling — Introduction",
+          "File Handling — Basic",
+          "Regular Expressions — Basics",
+          "Control Flow"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "for Loops is part of Control Flow."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: for Loops",
+      "code": "score = 75\nif score >= 60:\n    print(\"pass\")\nelse:\n    print(\"fail\")",
+      "payload": {
+        "options": [
+          "True",
+          "pass",
+          "fail",
+          "75"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"pass\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"adult\".",
+      "code": "age = 20\nif age = 18:\n    print(\"adult\")",
+      "payload": {
+        "options": [
+          "if (age >= 18)",
+          "if age >= 18 then",
+          "if age >= 18:",
+          "if age => 18:"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"adult\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"0\\n1\\n2\".",
+      "payload": {
+        "template": "for n in range(3):\n    print({{b1}})",
+        "bank": [
+          "n",
+          "i",
+          "range",
+          "print"
+        ],
+        "blanks": {
+          "b1": [
+            "n"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"n\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Print 0 and 1 with a while loop.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "n = 0"
+          },
+          {
+            "id": "l2",
+            "text": "while n < 2:"
+          },
+          {
+            "id": "l3",
+            "text": "    print(n)"
+          },
+          {
+            "id": "l4",
+            "text": "    n += 1"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"0\\n1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice for Loops: write a function sum_to that returns the sum of every number from 1 to n.",
+      "payload": {
+        "starterCode": "def sum_to(n):\n    pass",
+        "functionName": "sum_to",
+        "tests": [
+          {
+            "input": [
+              1
+            ],
+            "expected": 1
+          },
+          {
+            "input": [
+              5
+            ],
+            "expected": 15
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              10
+            ],
+            "expected": 55
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef sum_to(n):\n    return sum(range(1, n + 1))\n```"
+    }
+  ]
+}

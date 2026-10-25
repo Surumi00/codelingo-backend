@@ -1,0 +1,162 @@
+{
+  "slug": "singleton-pattern",
+  "title": "Singleton",
+  "conceptSlug": "singleton-pattern",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn the Singleton design pattern and its use cases.”",
+      "payload": {
+        "options": [
+          "Advanced itertools",
+          "eval()",
+          "Garbage Collection",
+          "Singleton"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to Singleton."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Singleton” belong to?",
+      "payload": {
+        "options": [
+          "Data Handling & Analysis",
+          "Design & Architecture",
+          "Advanced OOP",
+          "Concurrency & Parallelism"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "Singleton is part of Advanced OOP."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Singleton",
+      "code": "class C:\n    count = 0\n\nC.count += 2\nprint(C.count)",
+      "payload": {
+        "options": [
+          "1",
+          "C",
+          "2",
+          "0"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"2\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"1\".",
+      "code": "class C:\n    def __init__(self)\n        self.x = 1\n\nc = C()\nprint(c.x)",
+      "payload": {
+        "options": [
+          "    def __init__():",
+          "    def __init__(self):",
+          "    def init(self):",
+          "    def __init__(self;):"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"1\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "class C:\n    value = {{b1}}\n\nprint(C.value)",
+        "bank": [
+          "1",
+          "2",
+          "value",
+          "C"
+        ],
+        "blanks": {
+          "b1": [
+            "1"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"1\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Use a property to expose a value.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "class C:"
+          },
+          {
+            "id": "l2",
+            "text": "    @property"
+          },
+          {
+            "id": "l3",
+            "text": "    def value(self):"
+          },
+          {
+            "id": "l4",
+            "text": "        return 1"
+          },
+          {
+            "id": "l5",
+            "text": "print(C().value)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ]
+      },
+      "explanation": "Run in this order to print \"1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Singleton: write a function make_pair that returns a list containing a and b.",
+      "payload": {
+        "starterCode": "def make_pair(a, b):\n    pass",
+        "functionName": "make_pair",
+        "tests": [
+          {
+            "input": [
+              1,
+              2
+            ],
+            "expected": [
+              1,
+              2
+            ]
+          },
+          {
+            "input": [
+              "a",
+              "b"
+            ],
+            "expected": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef make_pair(a, b):\n    return [a, b]\n```"
+    }
+  ]
+}

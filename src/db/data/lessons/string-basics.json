@@ -1,0 +1,140 @@
+{
+  "slug": "string-basics",
+  "title": "String Basics",
+  "conceptSlug": "string-basics",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how strings are created and represented in Python.”",
+      "payload": {
+        "options": [
+          "Dictionaries",
+          "Lambda Functions",
+          "String Basics",
+          "except"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to String Basics."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “String Basics” belong to?",
+      "payload": {
+        "options": [
+          "Testing — Introduction",
+          "Strings",
+          "Data Structures",
+          "Modules & Packages — Basics"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "String Basics is part of Strings."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: String Basics",
+      "code": "word = \"python\"\nprint(word[0] + word[-1])",
+      "payload": {
+        "options": [
+          "py",
+          "po",
+          "python",
+          "pn"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"pn\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Hello, Ada\".",
+      "code": "name = \"Ada\"\nprint(\"Hello, \" + name",
+      "payload": {
+        "options": [
+          "print(\"Hello, \" + name)",
+          "print(\"Hello, \" + Name)",
+          "print(Hello + name)",
+          "print(\"Hello, \" name)"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"Hello, Ada\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"HELLO\".",
+      "payload": {
+        "template": "text = \"hello\"\nprint(text.{{b1}}())",
+        "bank": [
+          "upper",
+          "lower",
+          "title",
+          "strip"
+        ],
+        "blanks": {
+          "b1": [
+            "upper"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"upper\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Join two strings and print the result.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "first = \"code\""
+          },
+          {
+            "id": "l2",
+            "text": "second = \"lingo\""
+          },
+          {
+            "id": "l3",
+            "text": "print(first + second)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"codelingo\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice String Basics: write a function shout that returns the uppercase text followed by an exclamation mark.",
+      "payload": {
+        "starterCode": "def shout(text):\n    pass",
+        "functionName": "shout",
+        "tests": [
+          {
+            "input": [
+              "hello"
+            ],
+            "expected": "HELLO!"
+          },
+          {
+            "input": [
+              "Python"
+            ],
+            "expected": "PYTHON!"
+          },
+          {
+            "input": [
+              ""
+            ],
+            "expected": "!"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef shout(text):\n    return text.upper() + \"!\"\n```"
+    }
+  ]
+}

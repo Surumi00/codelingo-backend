@@ -1,0 +1,145 @@
+{
+  "slug": "json-files",
+  "title": "JSON",
+  "conceptSlug": "json-files",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to work with JSON data in Python.”",
+      "payload": {
+        "options": [
+          "Basic ORM Concepts",
+          "collections",
+          "@property",
+          "JSON"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to JSON."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “JSON” belong to?",
+      "payload": {
+        "options": [
+          "Advanced Decorators & Metaprogramming",
+          "Networking & Web Development",
+          "Advanced File Handling",
+          "Testing & Debugging — Intermediate"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "JSON is part of Advanced File Handling."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: JSON",
+      "code": "import csv, io\nbuffer = io.StringIO()\nwriter = csv.writer(buffer)\nwriter.writerow([\"a\", \"b\"])\nprint(buffer.getvalue().strip())",
+      "payload": {
+        "options": [
+          "ab",
+          "a b",
+          "a,b",
+          "['a', 'b']"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"a,b\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"1\".",
+      "code": "import json\nprint(json.loads('{\"a\": 1}')[\"b\"])",
+      "payload": {
+        "options": [
+          "print(json.loads('{\"a\": 1}')[\"a\"]",
+          "print(json.loads('{\"a\": 1}')[\"a\"])",
+          "print(json.load('{\"a\": 1}')[\"a\"])",
+          "print(json.loads({\"a\": 1})[\"a\"])"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"1\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "import json\nprint(json.loads('{\"a\": {{b1}}}')[\"a\"])",
+        "bank": [
+          "1",
+          "2",
+          "a",
+          "0"
+        ],
+        "blanks": {
+          "b1": [
+            "1"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"1\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Parse JSON text and print one value.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import json"
+          },
+          {
+            "id": "l2",
+            "text": "data = json.loads('{\"a\": 1}')"
+          },
+          {
+            "id": "l3",
+            "text": "print(data[\"a\"])"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice JSON: write a function count_keys that returns how many keys are in a dictionary.",
+      "payload": {
+        "starterCode": "def count_keys(data):\n    pass",
+        "functionName": "count_keys",
+        "tests": [
+          {
+            "input": [
+              {
+                "a": 1,
+                "b": 2
+              }
+            ],
+            "expected": 2
+          },
+          {
+            "input": [
+              {}
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              {
+                "x": 10
+              }
+            ],
+            "expected": 1
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef count_keys(data):\n    return len(data)\n```"
+    }
+  ]
+}

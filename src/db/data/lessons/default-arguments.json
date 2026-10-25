@@ -1,0 +1,140 @@
+{
+  "slug": "default-arguments",
+  "title": "Default Arguments",
+  "conceptSlug": "default-arguments",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to provide default values for function parameters.”",
+      "payload": {
+        "options": [
+          "Writing Text Files",
+          "pip",
+          "Basic unittest",
+          "Default Arguments"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to Default Arguments."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Default Arguments” belong to?",
+      "payload": {
+        "options": [
+          "Object-Oriented Programming",
+          "Advanced File Handling",
+          "Functions — Intermediate",
+          "Virtual Environments & Package Management"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "Default Arguments is part of Functions — Intermediate."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Default Arguments",
+      "code": "def total(*nums):\n    return sum(nums)\n\nprint(total(1, 2, 3))",
+      "payload": {
+        "options": [
+          "(1, 2, 3)",
+          "None",
+          "6",
+          "3"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"6\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Hi Ada\".",
+      "code": "def greet(name=\"Ada\"):\n    return \"Hi \" + name\n\nprint(greet)",
+      "payload": {
+        "options": [
+          "print(\"Hi \" + greet())",
+          "print(greet())",
+          "print(greet(\"Bob\"))",
+          "print(greet(name))"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"Hi Ada\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"3\".",
+      "payload": {
+        "template": "def add(a, b=1):\n    return a + b\n\nprint(add({{b1}}))",
+        "bank": [
+          "2",
+          "0",
+          "b",
+          "a"
+        ],
+        "blanks": {
+          "b1": [
+            "2"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"2\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Use a lambda to double a number.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "double = lambda n: n * 2"
+          },
+          {
+            "id": "l2",
+            "text": "value = double(5)"
+          },
+          {
+            "id": "l3",
+            "text": "print(value)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"10\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Default Arguments: write a function greet that returns a friendly greeting for name.",
+      "payload": {
+        "starterCode": "def greet(name):\n    pass",
+        "functionName": "greet",
+        "tests": [
+          {
+            "input": [
+              "Ada"
+            ],
+            "expected": "Hello, Ada!"
+          },
+          {
+            "input": [
+              "Sam"
+            ],
+            "expected": "Hello, Sam!"
+          },
+          {
+            "input": [
+              ""
+            ],
+            "expected": "Hello, !"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n```"
+    }
+  ]
+}

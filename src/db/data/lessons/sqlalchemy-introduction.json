@@ -1,0 +1,150 @@
+{
+  "slug": "sqlalchemy-introduction",
+  "title": "SQLAlchemy Introduction",
+  "conceptSlug": "sqlalchemy-introduction",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn the basics of using SQLAlchemy as a Python ORM.”",
+      "payload": {
+        "options": [
+          "__next__",
+          "SQLAlchemy Introduction",
+          "itertools",
+          "Setters and Getters"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to SQLAlchemy Introduction."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “SQLAlchemy Introduction” belong to?",
+      "payload": {
+        "options": [
+          "Working with APIs & Databases",
+          "Advanced OOP",
+          "Concurrency & Parallelism",
+          "Data Handling & Analysis"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "SQLAlchemy Introduction is part of Working with APIs & Databases."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: SQLAlchemy Introduction",
+      "code": "payload = {\"ok\": True}\nprint(payload.get(\"ok\"))",
+      "payload": {
+        "options": [
+          "True",
+          "False",
+          "ok",
+          "None"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"True\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"unknown\".",
+      "code": "payload = {\"ok\": True}\nprint(payload[\"status\"])",
+      "payload": {
+        "options": [
+          "print(payload.get(\"ok\"))",
+          "print(payload.status)",
+          "print(payload.get[\"status\"])",
+          "print(payload.get(\"status\", \"unknown\"))"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"unknown\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"True\".",
+      "payload": {
+        "template": "payload = {\"ok\": True}\nprint(payload.{{b1}}(\"ok\"))",
+        "bank": [
+          "get",
+          "set",
+          "add",
+          "pop"
+        ],
+        "blanks": {
+          "b1": [
+            "get"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"get\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Create an in-memory SQLite table.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import sqlite3"
+          },
+          {
+            "id": "l2",
+            "text": "connection = sqlite3.connect(\":memory:\")"
+          },
+          {
+            "id": "l3",
+            "text": "connection.execute(\"CREATE TABLE t (n INTEGER)\")"
+          },
+          {
+            "id": "l4",
+            "text": "print(\"ready\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"ready\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice SQLAlchemy Introduction: write a function count_keys that returns how many keys are in a dictionary.",
+      "payload": {
+        "starterCode": "def count_keys(data):\n    pass",
+        "functionName": "count_keys",
+        "tests": [
+          {
+            "input": [
+              {
+                "a": 1,
+                "b": 2
+              }
+            ],
+            "expected": 2
+          },
+          {
+            "input": [
+              {}
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              {
+                "x": 10
+              }
+            ],
+            "expected": 1
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef count_keys(data):\n    return len(data)\n```"
+    }
+  ]
+}

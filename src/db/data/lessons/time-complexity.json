@@ -1,0 +1,146 @@
+{
+  "slug": "time-complexity",
+  "title": "Time Complexity",
+  "conceptSlug": "time-complexity",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to analyze the time requirements of algorithms.”",
+      "payload": {
+        "options": [
+          "FastAPI",
+          "Large Datasets",
+          "pyproject.toml",
+          "Time Complexity"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to Time Complexity."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Time Complexity” belong to?",
+      "payload": {
+        "options": [
+          "Specialized Domains",
+          "Control Flow",
+          "Memory Management & Performance",
+          "Advanced Testing & Debugging"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "Time Complexity is part of Memory Management & Performance."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Time Complexity",
+      "code": "import time\nstart = time.perf_counter()\ntotal = sum(range(10))\nprint(total)",
+      "payload": {
+        "options": [
+          "10",
+          "None",
+          "45",
+          "55"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"45\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "items = [1, 2, 3]\nprint(items[3])",
+      "payload": {
+        "options": [
+          "print(items[1])",
+          "print(items[2])",
+          "print(items[0])",
+          "print(items)"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"[0, 1, 2]\".",
+      "payload": {
+        "template": "items = [{{b1}} for n in range(3)]\nprint(items)",
+        "bank": [
+          "n",
+          "i",
+          "range",
+          "list"
+        ],
+        "blanks": {
+          "b1": [
+            "n"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"n\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Sum a range of numbers.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "values = list(range(5))"
+          },
+          {
+            "id": "l2",
+            "text": "total = sum(values)"
+          },
+          {
+            "id": "l3",
+            "text": "print(total)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"10\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Time Complexity: write a function sum_to that returns the sum of every number from 1 to n.",
+      "payload": {
+        "starterCode": "def sum_to(n):\n    pass",
+        "functionName": "sum_to",
+        "tests": [
+          {
+            "input": [
+              1
+            ],
+            "expected": 1
+          },
+          {
+            "input": [
+              5
+            ],
+            "expected": 15
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              10
+            ],
+            "expected": 55
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef sum_to(n):\n    return sum(range(1, n + 1))\n```"
+    }
+  ]
+}

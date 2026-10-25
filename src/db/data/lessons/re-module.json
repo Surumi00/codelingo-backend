@@ -1,0 +1,140 @@
+{
+  "slug": "re-module",
+  "title": "re Module",
+  "conceptSlug": "re-module",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to use Python's built-in re module for regular expressions.”",
+      "payload": {
+        "options": [
+          "Classes and Objects",
+          "Abstraction",
+          "filter()",
+          "re Module"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to re Module."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “re Module” belong to?",
+      "payload": {
+        "options": [
+          "Working with APIs & Databases",
+          "Advanced OOP",
+          "Regular Expressions — Basics",
+          "Advanced Functions"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "re Module is part of Regular Expressions — Basics."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: re Module",
+      "code": "import re\nmatch = re.search(\"[0-9]+\", \"x42\")\nprint(match.group())",
+      "payload": {
+        "options": [
+          "2",
+          "x42",
+          "42",
+          "4"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"42\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"42\".",
+      "code": "import re\nmatch = re.search(\"[0-9]\", \"x42\")\nprint(match.group())",
+      "payload": {
+        "options": [
+          "match = re.search(\"[a-z]+\", \"x42\")",
+          "match = re.search(\"[0-9]+\", \"x42\")",
+          "match = re.search(\"42\", \"x\")",
+          "match = re.findall(\"[0-9]+\", \"x42\")"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"42\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"True\".",
+      "payload": {
+        "template": "import re\nprint(bool(re.{{b1}}(\"[0-9]+\", \"x42\")))",
+        "bank": [
+          "search",
+          "find",
+          "match",
+          "sub"
+        ],
+        "blanks": {
+          "b1": [
+            "search"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"search\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Find the digits in a string and print them.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import re"
+          },
+          {
+            "id": "l2",
+            "text": "match = re.search(\"[0-9]+\", \"x42\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(match.group())"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"42\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice re Module: write a function is_digits that returns True when text contains only digits.",
+      "payload": {
+        "starterCode": "def is_digits(text):\n    pass",
+        "functionName": "is_digits",
+        "tests": [
+          {
+            "input": [
+              "123"
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              "12a"
+            ],
+            "expected": false
+          },
+          {
+            "input": [
+              ""
+            ],
+            "expected": false
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef is_digits(text):\n    return text.isdigit()\n```"
+    }
+  ]
+}

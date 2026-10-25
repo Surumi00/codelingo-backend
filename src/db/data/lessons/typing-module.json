@@ -1,0 +1,143 @@
+{
+  "slug": "typing-module",
+  "title": "typing",
+  "conceptSlug": "typing-module",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn Python's typing module for advanced type annotations.”",
+      "payload": {
+        "options": [
+          "Automation — BeautifulSoup",
+          "int, float, str, and bool",
+          "if, elif, and else",
+          "typing"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to typing."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “typing” belong to?",
+      "payload": {
+        "options": [
+          "Functions — Basics",
+          "Functions — Intermediate",
+          "Design & Architecture",
+          "Operators"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "typing is part of Design & Architecture."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: typing",
+      "code": "def area(width, height):\n    return width * height\n\nprint(area(2, 3))",
+      "payload": {
+        "options": [
+          "23",
+          "None",
+          "6",
+          "5"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"6\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"6\".",
+      "code": "def area(width, height):\n    return width + height\n\nprint(area(2, 3))",
+      "payload": {
+        "options": [
+          "    return width * width",
+          "    return width * height",
+          "    return width - height",
+          "    return width / height"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"6\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"6\".",
+      "payload": {
+        "template": "def area(width: int, height: int) -> {{b1}}:\n    return width * height\n\nprint(area(2, 3))",
+        "bank": [
+          "int",
+          "str",
+          "float",
+          "bool"
+        ],
+        "blanks": {
+          "b1": [
+            "int"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"int\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Write a small, clearly named function.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "def area(width, height):"
+          },
+          {
+            "id": "l2",
+            "text": "    return width * height"
+          },
+          {
+            "id": "l3",
+            "text": "print(area(2, 3))"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"6\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice typing: write a function add that returns the sum of a and b.",
+      "payload": {
+        "starterCode": "def add(a, b):\n    pass",
+        "functionName": "add",
+        "tests": [
+          {
+            "input": [
+              2,
+              3
+            ],
+            "expected": 5
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -1,
+              5
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef add(a, b):\n    return a + b\n```"
+    }
+  ]
+}

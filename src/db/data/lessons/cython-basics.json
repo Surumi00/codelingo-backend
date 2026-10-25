@@ -1,0 +1,146 @@
+{
+  "slug": "cython-basics",
+  "title": "Cython Basics",
+  "conceptSlug": "cython-basics",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how Cython can improve Python performance by compiling Python-like code.”",
+      "payload": {
+        "options": [
+          "TDD",
+          "CI/CD",
+          "Cython Basics",
+          "NumPy"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to Cython Basics."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Cython Basics” belong to?",
+      "payload": {
+        "options": [
+          "Control Flow",
+          "Memory Management & Performance",
+          "Advanced Testing & Debugging",
+          "Specialized Domains"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "Cython Basics is part of Memory Management & Performance."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Cython Basics",
+      "code": "import time\nstart = time.perf_counter()\ntotal = sum(range(10))\nprint(total)",
+      "payload": {
+        "options": [
+          "55",
+          "10",
+          "None",
+          "45"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"45\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "items = [1, 2, 3]\nprint(items[3])",
+      "payload": {
+        "options": [
+          "print(items[2])",
+          "print(items[0])",
+          "print(items)",
+          "print(items[1])"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"[0, 1, 2]\".",
+      "payload": {
+        "template": "items = [{{b1}} for n in range(3)]\nprint(items)",
+        "bank": [
+          "n",
+          "i",
+          "range",
+          "list"
+        ],
+        "blanks": {
+          "b1": [
+            "n"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"n\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Sum a range of numbers.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "values = list(range(5))"
+          },
+          {
+            "id": "l2",
+            "text": "total = sum(values)"
+          },
+          {
+            "id": "l3",
+            "text": "print(total)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"10\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Cython Basics: write a function double that returns n times 2.",
+      "payload": {
+        "starterCode": "def double(n):\n    pass",
+        "functionName": "double",
+        "tests": [
+          {
+            "input": [
+              2
+            ],
+            "expected": 4
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -3
+            ],
+            "expected": -6
+          },
+          {
+            "input": [
+              10
+            ],
+            "expected": 20
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef double(n):\n    return n * 2\n```"
+    }
+  ]
+}

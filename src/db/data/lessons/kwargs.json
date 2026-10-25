@@ -1,0 +1,143 @@
+{
+  "slug": "kwargs",
+  "title": "**kwargs",
+  "conceptSlug": "kwargs",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to accept a variable number of keyword arguments.”",
+      "payload": {
+        "options": [
+          "Basic Pattern Matching",
+          "Constructors (__init__)",
+          "**kwargs",
+          "Creating Custom Modules"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to **kwargs."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “**kwargs” belong to?",
+      "payload": {
+        "options": [
+          "Advanced File Handling",
+          "Functions — Intermediate",
+          "Virtual Environments & Package Management",
+          "Object-Oriented Programming"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "**kwargs is part of Functions — Intermediate."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: **kwargs",
+      "code": "def total(*nums):\n    return sum(nums)\n\nprint(total(1, 2, 3))",
+      "payload": {
+        "options": [
+          "3",
+          "(1, 2, 3)",
+          "None",
+          "6"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"6\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Hi Ada\".",
+      "code": "def greet(name=\"Ada\"):\n    return \"Hi \" + name\n\nprint(greet)",
+      "payload": {
+        "options": [
+          "print(greet())",
+          "print(greet(\"Bob\"))",
+          "print(greet(name))",
+          "print(\"Hi \" + greet())"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"Hi Ada\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"3\".",
+      "payload": {
+        "template": "def add(a, b=1):\n    return a + b\n\nprint(add({{b1}}))",
+        "bank": [
+          "2",
+          "0",
+          "b",
+          "a"
+        ],
+        "blanks": {
+          "b1": [
+            "2"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"2\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Use a lambda to double a number.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "double = lambda n: n * 2"
+          },
+          {
+            "id": "l2",
+            "text": "value = double(5)"
+          },
+          {
+            "id": "l3",
+            "text": "print(value)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"10\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice **kwargs: write a function add that returns the sum of a and b.",
+      "payload": {
+        "starterCode": "def add(a, b):\n    pass",
+        "functionName": "add",
+        "tests": [
+          {
+            "input": [
+              2,
+              3
+            ],
+            "expected": 5
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -1,
+              5
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef add(a, b):\n    return a + b\n```"
+    }
+  ]
+}

@@ -14,8 +14,6 @@ export function authenticate(
 ) {
     const authHeader = req.headers.authorization;
 
-    console.log("Authorization Header:", authHeader); // Debugging line
-
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
         return res.status(401).json({
             error: { message: "Authentication required" },

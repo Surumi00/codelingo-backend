@@ -1,0 +1,145 @@
+{
+  "slug": "python-devops-automation",
+  "title": "DevOps — Python Automation",
+  "conceptSlug": "python-devops-automation",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how Python can automate DevOps and infrastructure tasks.”",
+      "payload": {
+        "options": [
+          "Arithmetic Operators",
+          "for Loops",
+          "Parameters",
+          "DevOps — Python Automation"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to DevOps — Python Automation."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “DevOps — Python Automation” belong to?",
+      "payload": {
+        "options": [
+          "Error Handling — Introduction",
+          "File Handling — Basic",
+          "Specialized Domains",
+          "Control Flow"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "DevOps — Python Automation is part of Specialized Domains."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: DevOps — Python Automation",
+      "code": "text = \"Python rocks\"\nprint(text.split()[0])",
+      "payload": {
+        "options": [
+          "Python rocks",
+          "['Python', 'rocks']",
+          "Python",
+          "rocks"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"Python\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Python\".",
+      "code": "text = \"Python rocks\"\nprint(text.split()[2])",
+      "payload": {
+        "options": [
+          "print(text[0])",
+          "print(text.split()[0])",
+          "print(text.split()[1])",
+          "print(text.split)"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"Python\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"['a', 'b', 'c']\".",
+      "payload": {
+        "template": "text = \"a,b,c\"\nprint(text.{{b1}}(\",\"))",
+        "bank": [
+          "split",
+          "join",
+          "strip",
+          "find"
+        ],
+        "blanks": {
+          "b1": [
+            "split"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"split\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Set up a tiny HTML parser.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from html.parser import HTMLParser"
+          },
+          {
+            "id": "l2",
+            "text": "class P(HTMLParser):"
+          },
+          {
+            "id": "l3",
+            "text": "    pass"
+          },
+          {
+            "id": "l4",
+            "text": "print(\"ready\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"ready\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice DevOps — Python Automation: write a function file_name that returns the final file name from a path.",
+      "payload": {
+        "starterCode": "def file_name(path):\n    pass",
+        "functionName": "file_name",
+        "tests": [
+          {
+            "input": [
+              "a/b/c.txt"
+            ],
+            "expected": "c.txt"
+          },
+          {
+            "input": [
+              "name.py"
+            ],
+            "expected": "name.py"
+          },
+          {
+            "input": [
+              "/tmp/x"
+            ],
+            "expected": "x"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef file_name(path):\n    return path.rsplit(\"/\", 1)[-1]\n```"
+    }
+  ]
+}

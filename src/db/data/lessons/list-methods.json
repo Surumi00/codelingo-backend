@@ -1,0 +1,156 @@
+{
+  "slug": "list-methods",
+  "title": "List Methods",
+  "conceptSlug": "list-methods",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn commonly used list methods such as append, remove, sort, and extend.”",
+      "payload": {
+        "options": [
+          "List Methods",
+          "*args",
+          "Importing Modules",
+          "re Module"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to List Methods."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “List Methods” belong to?",
+      "payload": {
+        "options": [
+          "Modules & Packages — Basics",
+          "Testing — Introduction",
+          "Advanced Exception Handling",
+          "Data Structures"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "List Methods is part of Data Structures."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: List Methods",
+      "code": "items = [1, 2, 3]\nitems.append(4)\nprint(len(items))",
+      "payload": {
+        "options": [
+          "[1, 2, 3, 4]",
+          "4",
+          "3",
+          "5"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"4\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "items = [1, 2, 3]\nprint(items[3])",
+      "payload": {
+        "options": [
+          "print(items[1])",
+          "print(items)",
+          "print(items[2])",
+          "print(items[0])"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "data = {\"a\": 1}\nprint(data[{{b1}}])",
+        "bank": [
+          "\"a\"",
+          "1",
+          "data",
+          "\"b\""
+        ],
+        "blanks": {
+          "b1": [
+            "\"a\""
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"\\\"a\\\"\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Append a value to a list and print it.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "items = [1, 2]"
+          },
+          {
+            "id": "l2",
+            "text": "items.append(3)"
+          },
+          {
+            "id": "l3",
+            "text": "print(items)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"[1, 2, 3]\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice List Methods: write a function sort_numbers that returns the numbers sorted from smallest to largest.",
+      "payload": {
+        "starterCode": "def sort_numbers(numbers):\n    pass",
+        "functionName": "sort_numbers",
+        "tests": [
+          {
+            "input": [
+              [
+                3,
+                1,
+                2
+              ]
+            ],
+            "expected": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "input": [
+              []
+            ],
+            "expected": []
+          },
+          {
+            "input": [
+              [
+                2,
+                2,
+                1
+              ]
+            ],
+            "expected": [
+              1,
+              2,
+              2
+            ]
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef sort_numbers(numbers):\n    return sorted(numbers)\n```"
+    }
+  ]
+}

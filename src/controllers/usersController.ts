@@ -3,7 +3,7 @@ import { eq } from "drizzle-orm";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { db } from "../db/index.js";
-import { users } from "../db/schema.js";
+import { diagnosticAttempts, users } from "../db/schema.js";
 import type { AuthRequest } from "../middleware/authMiddleware.js";
 
 const JWT_SECRET = process.env.JWT_SECRET as string;
@@ -25,6 +25,7 @@ experienceLevel: users.experienceLevel,
     currentLevel: users.currentLevel,
     xp: users.xp,
     streakCount: users.streakCount,
+    longestStreak: users.longestStreak,
     lastActiveDate: users.lastActiveDate,
     placementReadinessScore: users.placementReadinessScore,
     avatarUrl: users.avatarUrl,
@@ -35,6 +36,32 @@ experienceLevel: users.experienceLevel,
 
 function signToken(userId: string) {
     return jwt.sign({ sub: userId }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+}
+
+async function hasTakenDiagnostic(userId: string) {
+    const [attempt] = await db
+        .select({ id: diagnosticAttempts.id })
+        .from(diagnosticAttempts)
+        .where(eq(diagnosticAttempts.userId, userId))
+        .limit(1);
+
+    return Boolean(attempt);
+}
+
+// Adds the two one-time setup flags the frontend uses to decide where a
+// returning user should land: onboarding (first run) and the diagnostic.
+async function withSetupFlags<
+    T extends {
+        id: string;
+        occupation: string | null;
+        experienceLevel: string | null;
+    },
+>(user: T) {
+    return {
+        ...user,
+        hasCompletedOnboarding: Boolean(user.occupation && user.experienceLevel),
+        hasTakenDiagnostic: await hasTakenDiagnostic(user.id),
+    };
 }
 
 
@@ -56,7 +83,7 @@ export async function getMe(req: AuthRequest, res: Response) {
         });
     }
 
-    res.json({ user });
+    res.json({ user: await withSetupFlags(user) });
 }
 
 
@@ -210,5 +237,5 @@ export async function login(req: Request, res: Response) {
 
     const { passwordHash: _omit, ...safeUser } = user;
 
-    res.json({ user: safeUser, token });
+    res.json({ user: await withSetupFlags(safeUser), token });
 }

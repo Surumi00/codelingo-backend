@@ -1,0 +1,146 @@
+{
+  "slug": "function-return-values",
+  "title": "Return Values",
+  "conceptSlug": "function-return-values",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how functions return results using the return statement.”",
+      "payload": {
+        "options": [
+          "Tuples",
+          "**kwargs",
+          "Creating Custom Modules",
+          "Return Values"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to Return Values."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Return Values” belong to?",
+      "payload": {
+        "options": [
+          "Virtual Environments & Package Management",
+          "Object-Oriented Programming",
+          "Functions — Basics",
+          "Functions — Intermediate"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "Return Values is part of Functions — Basics."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Return Values",
+      "code": "def double(n):\n    return n * 2\n\nprint(double(4))",
+      "payload": {
+        "options": [
+          "16",
+          "None",
+          "8",
+          "4"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"8\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Hi Ada\".",
+      "code": "def greet(name):\n    return \"Hi \" + name\n\nprint(greet(\"Ada\")",
+      "payload": {
+        "options": [
+          "print(greet \"Ada\")",
+          "print(greet(\"Ada\"))",
+          "print(greet)",
+          "print(greet(\"Ada\", 1))"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"Hi Ada\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"5\".",
+      "payload": {
+        "template": "def add(a, b):\n    return a {{b1}} b\n\nprint(add(2, 3))",
+        "bank": [
+          "+",
+          "-",
+          "*",
+          "/"
+        ],
+        "blanks": {
+          "b1": [
+            "+"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"+\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Define a square function and print its result.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "def square(n):"
+          },
+          {
+            "id": "l2",
+            "text": "    return n * n"
+          },
+          {
+            "id": "l3",
+            "text": "print(square(3))"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"9\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Return Values: write a function double that returns n times 2.",
+      "payload": {
+        "starterCode": "def double(n):\n    pass",
+        "functionName": "double",
+        "tests": [
+          {
+            "input": [
+              2
+            ],
+            "expected": 4
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -3
+            ],
+            "expected": -6
+          },
+          {
+            "input": [
+              10
+            ],
+            "expected": 20
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef double(n):\n    return n * 2\n```"
+    }
+  ]
+}

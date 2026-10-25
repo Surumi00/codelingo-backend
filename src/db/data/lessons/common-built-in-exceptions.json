@@ -1,0 +1,148 @@
+{
+  "slug": "common-built-in-exceptions",
+  "title": "Common Built-in Exceptions",
+  "conceptSlug": "common-built-in-exceptions",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn about common Python exceptions such as ValueError, TypeError, and IndexError.”",
+      "payload": {
+        "options": [
+          "Common Built-in Exceptions",
+          "Default Arguments",
+          "Writing Text Files",
+          "pip"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to Common Built-in Exceptions."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Common Built-in Exceptions” belong to?",
+      "payload": {
+        "options": [
+          "File Handling — Basic",
+          "Regular Expressions — Basics",
+          "Advanced Functions",
+          "Error Handling — Introduction"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "Common Built-in Exceptions is part of Error Handling — Introduction."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Common Built-in Exceptions",
+      "code": "try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print(\"no zero\")",
+      "payload": {
+        "options": [
+          "Error",
+          "no zero",
+          "0",
+          "10"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"no zero\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"safe\".",
+      "code": "try:\n    print(1 / 0)\nexcept ZeroDivisionError\n    print(\"safe\")",
+      "payload": {
+        "options": [
+          "catch ZeroDivisionError:",
+          "except ZeroDivisionError then",
+          "except ZeroDivisionError:",
+          "except \"ZeroDivisionError\":"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"safe\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"safe\".",
+      "payload": {
+        "template": "try:\n    print(1 / 0)\nexcept {{b1}}:\n    print(\"safe\")",
+        "bank": [
+          "ZeroDivisionError",
+          "ValueError",
+          "TypeError",
+          "Exception"
+        ],
+        "blanks": {
+          "b1": [
+            "ZeroDivisionError"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"ZeroDivisionError\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Catch a division by zero and print a message.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "try:"
+          },
+          {
+            "id": "l2",
+            "text": "    print(1 / 0)"
+          },
+          {
+            "id": "l3",
+            "text": "except ZeroDivisionError:"
+          },
+          {
+            "id": "l4",
+            "text": "    print(\"safe\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"safe\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Common Built-in Exceptions: write a function safe_divide that returns a divided by b, or None when b is 0.",
+      "payload": {
+        "starterCode": "def safe_divide(a, b):\n    pass",
+        "functionName": "safe_divide",
+        "tests": [
+          {
+            "input": [
+              6,
+              2
+            ],
+            "expected": 3
+          },
+          {
+            "input": [
+              1,
+              0
+            ],
+            "expected": null
+          },
+          {
+            "input": [
+              0,
+              5
+            ],
+            "expected": 0
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef safe_divide(a, b):\n    if b == 0:\n        return None\n    return a / b\n```"
+    }
+  ]
+}

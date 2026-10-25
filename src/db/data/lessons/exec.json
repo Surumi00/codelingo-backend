@@ -1,0 +1,156 @@
+{
+  "slug": "exec",
+  "title": "exec()",
+  "conceptSlug": "exec",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how exec() dynamically executes Python code.”",
+      "payload": {
+        "options": [
+          "Django",
+          "Seaborn",
+          "exec()",
+          "Memory Profiling"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to exec()."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “exec()” belong to?",
+      "payload": {
+        "options": [
+          "Python Basics",
+          "Advanced Decorators & Metaprogramming",
+          "Networking & Web Development",
+          "Packaging & Deployment"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "exec() is part of Advanced Decorators & Metaprogramming."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: exec()",
+      "code": "def wrap(fn):\n    return lambda: \"ok\"\n\nprint(wrap(lambda: \"hi\")())",
+      "payload": {
+        "options": [
+          "hi",
+          "None",
+          "wrap",
+          "ok"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"ok\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"0\".",
+      "code": "class C:\n    pass\n\nc = C()\nprint(getattr(c, \"x\"))",
+      "payload": {
+        "options": [
+          "print(getattr(c, \"x\", 0))",
+          "print(c.x)",
+          "print(setattr(c, \"x\", 0))",
+          "print(getattr(c, 0))"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"0\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"5\".",
+      "payload": {
+        "template": "print({{b1}}(\"2 + 3\"))",
+        "bank": [
+          "eval",
+          "exec",
+          "str",
+          "int"
+        ],
+        "blanks": {
+          "b1": [
+            "eval"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"eval\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Set an attribute dynamically and read it back.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "class C:"
+          },
+          {
+            "id": "l2",
+            "text": "    pass"
+          },
+          {
+            "id": "l3",
+            "text": "c = C()"
+          },
+          {
+            "id": "l4",
+            "text": "setattr(c, \"x\", 1)"
+          },
+          {
+            "id": "l5",
+            "text": "print(c.x)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ]
+      },
+      "explanation": "Run in this order to print \"1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice exec(): write a function double that returns n times 2.",
+      "payload": {
+        "starterCode": "def double(n):\n    pass",
+        "functionName": "double",
+        "tests": [
+          {
+            "input": [
+              2
+            ],
+            "expected": 4
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -3
+            ],
+            "expected": -6
+          },
+          {
+            "input": [
+              10
+            ],
+            "expected": 20
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef double(n):\n    return n * 2\n```"
+    }
+  ]
+}

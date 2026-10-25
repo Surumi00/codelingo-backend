@@ -1,0 +1,162 @@
+{
+  "slug": "instance-vs-class-variables",
+  "title": "Instance vs Class Variables",
+  "conceptSlug": "instance-vs-class-variables",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Understand the difference between instance-level and class-level data.”",
+      "payload": {
+        "options": [
+          "Recursion",
+          "Custom Exceptions",
+          "__enter__ and __exit__",
+          "Instance vs Class Variables"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to Instance vs Class Variables."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Instance vs Class Variables” belong to?",
+      "payload": {
+        "options": [
+          "Testing & Debugging — Intermediate",
+          "Advanced Decorators & Metaprogramming",
+          "Object-Oriented Programming",
+          "Advanced File Handling"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "Instance vs Class Variables is part of Object-Oriented Programming."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Instance vs Class Variables",
+      "code": "class Dog:\n    def __init__(self, name):\n        self.name = name\n\ndog = Dog(\"Rex\")\nprint(dog.name)",
+      "payload": {
+        "options": [
+          "name",
+          "None",
+          "Rex",
+          "Dog"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"Rex\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Rex\".",
+      "code": "class Dog:\n    def __init__(self, name)\n        self.name = name\n\ndog = Dog(\"Rex\")\nprint(dog.name)",
+      "payload": {
+        "options": [
+          "    def __init__(self; name):",
+          "    def __init__(self, name):",
+          "    def init(self, name):",
+          "    def __init__(name):"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"Rex\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"Mia\".",
+      "payload": {
+        "template": "class Cat:\n    def {{b1}}(self, name):\n        self.name = name\n\ncat = Cat(\"Mia\")\nprint(cat.name)",
+        "bank": [
+          "__init__",
+          "init",
+          "new",
+          "self"
+        ],
+        "blanks": {
+          "b1": [
+            "__init__"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"__init__\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Create a small class and print an attribute.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "class Box:"
+          },
+          {
+            "id": "l2",
+            "text": "    def __init__(self):"
+          },
+          {
+            "id": "l3",
+            "text": "        self.value = 1"
+          },
+          {
+            "id": "l4",
+            "text": "box = Box()"
+          },
+          {
+            "id": "l5",
+            "text": "print(box.value)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ]
+      },
+      "explanation": "Run in this order to print \"1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Instance vs Class Variables: write a function make_pair that returns a list containing a and b.",
+      "payload": {
+        "starterCode": "def make_pair(a, b):\n    pass",
+        "functionName": "make_pair",
+        "tests": [
+          {
+            "input": [
+              1,
+              2
+            ],
+            "expected": [
+              1,
+              2
+            ]
+          },
+          {
+            "input": [
+              "a",
+              "b"
+            ],
+            "expected": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef make_pair(a, b):\n    return [a, b]\n```"
+    }
+  ]
+}

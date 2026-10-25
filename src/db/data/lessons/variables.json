@@ -1,0 +1,146 @@
+{
+  "slug": "variables",
+  "title": "Variables",
+  "conceptSlug": "variables",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how variables store and reference values in Python.”",
+      "payload": {
+        "options": [
+          "Variables",
+          "Operator Precedence",
+          "Indexing and Slicing",
+          "finally"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to Variables."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Variables” belong to?",
+      "payload": {
+        "options": [
+          "Strings",
+          "Data Structures",
+          "Modules & Packages — Basics",
+          "Python Basics"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "Variables is part of Python Basics."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Variables",
+      "code": "name = \"Ada\"\nage = 12\nprint(name, age)",
+      "payload": {
+        "options": [
+          "name age",
+          "Ada 12",
+          "Ada, 12",
+          "Ada\n12"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"Ada 12\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Hello\".",
+      "code": "print(\"Hello\"",
+      "payload": {
+        "options": [
+          "print \"Hello\"",
+          "print(\"Hello\",",
+          "print(\"Hello\")",
+          "print(Hello)"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"Hello\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"Ada\".",
+      "payload": {
+        "template": "name = {{b1}}\nprint(name)",
+        "bank": [
+          "\"Ada\"",
+          "Ada",
+          "\"Bob\"",
+          "12"
+        ],
+        "blanks": {
+          "b1": [
+            "\"Ada\""
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"\\\"Ada\\\"\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Build a tiny program that stores a name and prints it.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "name = \"Ada\""
+          },
+          {
+            "id": "l2",
+            "text": "age = 12"
+          },
+          {
+            "id": "l3",
+            "text": "print(name, age)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"Ada 12\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Variables: write a function double that returns n times 2.",
+      "payload": {
+        "starterCode": "def double(n):\n    pass",
+        "functionName": "double",
+        "tests": [
+          {
+            "input": [
+              2
+            ],
+            "expected": 4
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -3
+            ],
+            "expected": -6
+          },
+          {
+            "input": [
+              10
+            ],
+            "expected": 20
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef double(n):\n    return n * 2\n```"
+    }
+  ]
+}

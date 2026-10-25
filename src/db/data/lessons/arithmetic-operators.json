@@ -1,0 +1,151 @@
+{
+  "slug": "arithmetic-operators",
+  "title": "Arithmetic Operators",
+  "conceptSlug": "arithmetic-operators",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn operators used for mathematical calculations such as addition, subtraction, multiplication, division, and modulus.”",
+      "payload": {
+        "options": [
+          "List Methods",
+          "Arithmetic Operators",
+          "for Loops",
+          "Parameters"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Arithmetic Operators."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Arithmetic Operators” belong to?",
+      "payload": {
+        "options": [
+          "Operators",
+          "Functions — Basics",
+          "Functions — Intermediate",
+          "Virtual Environments & Package Management"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Arithmetic Operators is part of Operators."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Arithmetic Operators",
+      "code": "x = 7\ny = 3\nprint(x // y)",
+      "payload": {
+        "options": [
+          "2",
+          "2.33",
+          "3",
+          "10"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"2\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"11\".",
+      "code": "print((5 + 2) * 3)",
+      "payload": {
+        "options": [
+          "print(5 + 2 + 3)",
+          "print(5 * 2 + 3)",
+          "print(5 - 2 * 3)",
+          "print(5 + 2 * 3)"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"11\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "print(10 {{b1}} 3)",
+        "bank": [
+          "%",
+          "/",
+          "//",
+          "*"
+        ],
+        "blanks": {
+          "b1": [
+            "%"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"%\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Calculate and print a total with tax.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "price = 10"
+          },
+          {
+            "id": "l2",
+            "text": "tax = 2"
+          },
+          {
+            "id": "l3",
+            "text": "total = price + tax"
+          },
+          {
+            "id": "l4",
+            "text": "print(total)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"12\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Arithmetic Operators: write a function double that returns n times 2.",
+      "payload": {
+        "starterCode": "def double(n):\n    pass",
+        "functionName": "double",
+        "tests": [
+          {
+            "input": [
+              2
+            ],
+            "expected": 4
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -3
+            ],
+            "expected": -6
+          },
+          {
+            "input": [
+              10
+            ],
+            "expected": 20
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef double(n):\n    return n * 2\n```"
+    }
+  ]
+}

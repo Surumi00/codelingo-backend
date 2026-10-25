@@ -1,0 +1,148 @@
+{
+  "slug": "better-pytest-usage",
+  "title": "Better pytest Usage",
+  "conceptSlug": "better-pytest-usage",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn more practical pytest techniques for testing Python applications.”",
+      "payload": {
+        "options": [
+          "Descriptors",
+          "Better pytest Usage",
+          "Design Patterns",
+          "Generator Expressions"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Better pytest Usage."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Better pytest Usage” belong to?",
+      "payload": {
+        "options": [
+          "Testing & Debugging — Intermediate",
+          "Advanced Decorators & Metaprogramming",
+          "Networking & Web Development",
+          "Packaging & Deployment"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Better pytest Usage is part of Testing & Debugging — Intermediate."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Better pytest Usage",
+      "code": "def add(a, b):\n    return a + b\n\nassert add(1, 2) == 3\nprint(\"ok\")",
+      "payload": {
+        "options": [
+          "ok",
+          "3",
+          "True",
+          "assert"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"ok\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"ok\".",
+      "code": "def add(a, b):\n    return a - b\n\nassert add(1, 2) == 3\nprint(\"ok\")",
+      "payload": {
+        "options": [
+          "    return a * b",
+          "    return a / b",
+          "    return b + a + 1",
+          "    return a + b"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"ok\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"done\".",
+      "payload": {
+        "template": "import logging\nlogging.basicConfig(level=logging.{{b1}})\nlogging.info(\"hi\")\nprint(\"done\")",
+        "bank": [
+          "INFO",
+          "info",
+          "DEBUG",
+          "WARN"
+        ],
+        "blanks": {
+          "b1": [
+            "INFO"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"INFO\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Run a tiny assertion-based test.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "def test_total():"
+          },
+          {
+            "id": "l2",
+            "text": "    assert sum([1, 2]) == 3"
+          },
+          {
+            "id": "l3",
+            "text": "test_total()"
+          },
+          {
+            "id": "l4",
+            "text": "print(\"passed\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"passed\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Better pytest Usage: write a function add that returns the sum of a and b.",
+      "payload": {
+        "starterCode": "def add(a, b):\n    pass",
+        "functionName": "add",
+        "tests": [
+          {
+            "input": [
+              2,
+              3
+            ],
+            "expected": 5
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -1,
+              5
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef add(a, b):\n    return a + b\n```"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "django",
+  "title": "Django",
+  "conceptSlug": "django",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn the fundamentals of building web applications with Django.”",
+      "payload": {
+        "options": [
+          "Django",
+          "Seaborn",
+          "setuptools",
+          "Type Hints"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to Django."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Django” belong to?",
+      "payload": {
+        "options": [
+          "Packaging & Deployment",
+          "Python Basics",
+          "Strings",
+          "Networking & Web Development"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "Django is part of Networking & Web Development."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Django",
+      "code": "from urllib.parse import urlparse\nurl = urlparse(\"https://example.com/path\")\nprint(url.scheme)",
+      "payload": {
+        "options": [
+          "url",
+          "https",
+          "example.com",
+          "/path"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"https\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"https\".",
+      "code": "from urllib.parse import urlparse\nurl = urlparse(\"https://example.com/path\")\nprint(url.schema)",
+      "payload": {
+        "options": [
+          "print(url.path)",
+          "print(url.netloc)",
+          "print(url.scheme)",
+          "print(url.host)"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"https\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"https\".",
+      "payload": {
+        "template": "from urllib.parse import urlparse\nurl = urlparse(\"https://example.com\")\nprint(url.{{b1}})",
+        "bank": [
+          "scheme",
+          "host",
+          "path",
+          "port"
+        ],
+        "blanks": {
+          "b1": [
+            "scheme"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"scheme\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Parse a URL and print its host.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from urllib.parse import urlparse"
+          },
+          {
+            "id": "l2",
+            "text": "url = urlparse(\"https://example.com\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(url.netloc)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"example.com\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Django: write a function status_ok that returns True when status is a 2xx success code.",
+      "payload": {
+        "starterCode": "def status_ok(status):\n    pass",
+        "functionName": "status_ok",
+        "tests": [
+          {
+            "input": [
+              200
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              404
+            ],
+            "expected": false
+          },
+          {
+            "input": [
+              201
+            ],
+            "expected": true
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef status_ok(status):\n    return 200 <= status < 300\n```"
+    }
+  ]
+}

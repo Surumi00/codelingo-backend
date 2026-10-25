@@ -1,0 +1,154 @@
+{
+  "slug": "scikit-learn",
+  "title": "Data Science / ML — scikit-learn",
+  "conceptSlug": "scikit-learn",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn the basics of machine learning with scikit-learn.”",
+      "payload": {
+        "options": [
+          "range()",
+          "Data Science / ML — scikit-learn",
+          "Installing Python and IDEs",
+          "Assignment Operators"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Data Science / ML — scikit-learn."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Data Science / ML — scikit-learn” belong to?",
+      "payload": {
+        "options": [
+          "Specialized Domains",
+          "Control Flow",
+          "Error Handling — Introduction",
+          "File Handling — Basic"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Data Science / ML — scikit-learn is part of Specialized Domains."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Data Science / ML — scikit-learn",
+      "code": "text = \"Python rocks\"\nprint(text.split()[0])",
+      "payload": {
+        "options": [
+          "Python",
+          "rocks",
+          "Python rocks",
+          "['Python', 'rocks']"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"Python\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Python\".",
+      "code": "text = \"Python rocks\"\nprint(text.split()[2])",
+      "payload": {
+        "options": [
+          "print(text.split()[1])",
+          "print(text.split)",
+          "print(text[0])",
+          "print(text.split()[0])"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"Python\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"['a', 'b', 'c']\".",
+      "payload": {
+        "template": "text = \"a,b,c\"\nprint(text.{{b1}}(\",\"))",
+        "bank": [
+          "split",
+          "join",
+          "strip",
+          "find"
+        ],
+        "blanks": {
+          "b1": [
+            "split"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"split\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Set up a tiny HTML parser.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from html.parser import HTMLParser"
+          },
+          {
+            "id": "l2",
+            "text": "class P(HTMLParser):"
+          },
+          {
+            "id": "l3",
+            "text": "    pass"
+          },
+          {
+            "id": "l4",
+            "text": "print(\"ready\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"ready\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Data Science / ML — scikit-learn: write a function mean that returns the average of a list of numbers.",
+      "payload": {
+        "starterCode": "def mean(values):\n    pass",
+        "functionName": "mean",
+        "tests": [
+          {
+            "input": [
+              [
+                2,
+                4,
+                6
+              ]
+            ],
+            "expected": 4
+          },
+          {
+            "input": [
+              [
+                10
+              ]
+            ],
+            "expected": 10
+          },
+          {
+            "input": [
+              [
+                0,
+                0
+              ]
+            ],
+            "expected": 0
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef mean(values):\n    return sum(values) / len(values)\n```"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "binary-files",
+  "title": "Binary Files",
+  "conceptSlug": "binary-files",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to read and write binary file data.”",
+      "payload": {
+        "options": [
+          "Binary Files",
+          "SQLAlchemy Introduction",
+          "itertools",
+          "Setters and Getters"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to Binary Files."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Binary Files” belong to?",
+      "payload": {
+        "options": [
+          "Testing & Debugging — Intermediate",
+          "Advanced Decorators & Metaprogramming",
+          "Networking & Web Development",
+          "Advanced File Handling"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "Binary Files is part of Advanced File Handling."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Binary Files",
+      "code": "import csv, io\nbuffer = io.StringIO()\nwriter = csv.writer(buffer)\nwriter.writerow([\"a\", \"b\"])\nprint(buffer.getvalue().strip())",
+      "payload": {
+        "options": [
+          "a b",
+          "a,b",
+          "['a', 'b']",
+          "ab"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"a,b\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"1\".",
+      "code": "import json\nprint(json.loads('{\"a\": 1}')[\"b\"])",
+      "payload": {
+        "options": [
+          "print(json.loads({\"a\": 1})[\"a\"])",
+          "print(json.loads('{\"a\": 1}')[\"a\"]",
+          "print(json.loads('{\"a\": 1}')[\"a\"])",
+          "print(json.load('{\"a\": 1}')[\"a\"])"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"1\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "import json\nprint(json.loads('{\"a\": {{b1}}}')[\"a\"])",
+        "bank": [
+          "1",
+          "2",
+          "a",
+          "0"
+        ],
+        "blanks": {
+          "b1": [
+            "1"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"1\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Parse JSON text and print one value.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import json"
+          },
+          {
+            "id": "l2",
+            "text": "data = json.loads('{\"a\": 1}')"
+          },
+          {
+            "id": "l3",
+            "text": "print(data[\"a\"])"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Binary Files: write a function line_count that returns the number of lines in a string.",
+      "payload": {
+        "starterCode": "def line_count(text):\n    pass",
+        "functionName": "line_count",
+        "tests": [
+          {
+            "input": [
+              "a\nb\nc"
+            ],
+            "expected": 3
+          },
+          {
+            "input": [
+              "one line"
+            ],
+            "expected": 1
+          },
+          {
+            "input": [
+              ""
+            ],
+            "expected": 0
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef line_count(text):\n    return len(text.splitlines())\n```"
+    }
+  ]
+}

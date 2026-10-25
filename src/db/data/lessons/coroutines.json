@@ -1,0 +1,153 @@
+{
+  "slug": "coroutines",
+  "title": "Coroutines",
+  "conceptSlug": "coroutines",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how coroutines can pause and resume execution.”",
+      "payload": {
+        "options": [
+          "Coroutines",
+          "exec()",
+          "Memory Profiling",
+          "Django"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to Coroutines."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Coroutines” belong to?",
+      "payload": {
+        "options": [
+          "Memory Management & Performance",
+          "Advanced Testing & Debugging",
+          "Specialized Domains",
+          "Advanced Iterators & Generators"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "Coroutines is part of Advanced Iterators & Generators."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Coroutines",
+      "code": "values = [1, 2]\nit = iter(values)\nprint(next(it))",
+      "payload": {
+        "options": [
+          "iter",
+          "1",
+          "2",
+          "[1, 2]"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"1\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"1\\n2\".",
+      "code": "values = [1, 2]\nit = iter(values)\nprint(next(it)\nprint(next(it))",
+      "payload": {
+        "options": [
+          "print(iter(it))",
+          "print(it)",
+          "print(next(it))",
+          "print(next(values))"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"1\\n2\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "values = [1, 2]\nit = {{b1}}(values)\nprint(next(it))",
+        "bank": [
+          "iter",
+          "next",
+          "list",
+          "range"
+        ],
+        "blanks": {
+          "b1": [
+            "iter"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"iter\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Create a generator and consume it.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "def count():"
+          },
+          {
+            "id": "l2",
+            "text": "    yield 1"
+          },
+          {
+            "id": "l3",
+            "text": "    yield 2"
+          },
+          {
+            "id": "l4",
+            "text": "print(list(count()))"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"[1, 2]\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Coroutines: write a function sum_list that returns the total of the numbers in a list.",
+      "payload": {
+        "starterCode": "def sum_list(numbers):\n    pass",
+        "functionName": "sum_list",
+        "tests": [
+          {
+            "input": [
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "expected": 6
+          },
+          {
+            "input": [
+              []
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              [
+                -2,
+                5,
+                1
+              ]
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef sum_list(numbers):\n    return sum(numbers)\n```"
+    }
+  ]
+}

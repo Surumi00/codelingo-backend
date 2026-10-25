@@ -1,0 +1,151 @@
+{
+  "slug": "control-flow",
+  "title": "if, elif, and else",
+  "conceptSlug": "control-flow",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to execute different blocks of code based on conditions.”",
+      "payload": {
+        "options": [
+          "Common String Methods",
+          "Common Built-in Exceptions",
+          "Default Arguments",
+          "if, elif, and else"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to if, elif, and else."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “if, elif, and else” belong to?",
+      "payload": {
+        "options": [
+          "File Handling — Basic",
+          "Regular Expressions — Basics",
+          "Control Flow",
+          "Error Handling — Introduction"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "if, elif, and else is part of Control Flow."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: if, elif, and else",
+      "code": "score = 75\nif score >= 60:\n    print(\"pass\")\nelse:\n    print(\"fail\")",
+      "payload": {
+        "options": [
+          "75",
+          "True",
+          "pass",
+          "fail"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"pass\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"adult\".",
+      "code": "age = 20\nif age = 18:\n    print(\"adult\")",
+      "payload": {
+        "options": [
+          "if age >= 18 then",
+          "if age >= 18:",
+          "if age => 18:",
+          "if (age >= 18)"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"adult\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"0\\n1\\n2\".",
+      "payload": {
+        "template": "for n in range(3):\n    print({{b1}})",
+        "bank": [
+          "n",
+          "i",
+          "range",
+          "print"
+        ],
+        "blanks": {
+          "b1": [
+            "n"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"n\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Print 0 and 1 with a while loop.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "n = 0"
+          },
+          {
+            "id": "l2",
+            "text": "while n < 2:"
+          },
+          {
+            "id": "l3",
+            "text": "    print(n)"
+          },
+          {
+            "id": "l4",
+            "text": "    n += 1"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"0\\n1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice if, elif, and else: write a function is_even that returns True when number is even.",
+      "payload": {
+        "starterCode": "def is_even(number):\n    pass",
+        "functionName": "is_even",
+        "tests": [
+          {
+            "input": [
+              2
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              7
+            ],
+            "expected": false
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              -4
+            ],
+            "expected": true
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef is_even(number):\n    return number % 2 == 0\n```"
+    }
+  ]
+}

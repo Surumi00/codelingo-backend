@@ -1,0 +1,158 @@
+{
+  "slug": "raising-exceptions",
+  "title": "Raising Exceptions",
+  "conceptSlug": "raising-exceptions",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to explicitly raise exceptions using raise.”",
+      "payload": {
+        "options": [
+          "Logging Basics",
+          "Raising Exceptions",
+          "requests",
+          "math"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Raising Exceptions."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Raising Exceptions” belong to?",
+      "payload": {
+        "options": [
+          "Advanced Exception Handling",
+          "Standard Library",
+          "Advanced Iterators & Generators",
+          "Memory Management & Performance"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Raising Exceptions is part of Advanced Exception Handling."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Raising Exceptions",
+      "code": "class MyError(Exception): pass\ntry:\n    raise MyError(\"boom\")\nexcept MyError:\n    print(\"caught\")",
+      "payload": {
+        "options": [
+          "caught",
+          "boom",
+          "Error",
+          "None"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"caught\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"caught\".",
+      "code": "class MyError(Exception): pass\ntry:\n    raise MyError(\"boom\")\nexcept MyErro:\n    print(\"caught\")",
+      "payload": {
+        "options": [
+          "except \"MyError\":",
+          "except Exception as MyError",
+          "catch MyError:",
+          "except MyError:"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"caught\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"caught\".",
+      "payload": {
+        "template": "try:\n    raise {{b1}}(\"bad\")\nexcept ValueError:\n    print(\"caught\")",
+        "bank": [
+          "ValueError",
+          "Exception",
+          "raise",
+          "try"
+        ],
+        "blanks": {
+          "b1": [
+            "ValueError"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"ValueError\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Define, raise, and catch a custom exception.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "class MyError(Exception):"
+          },
+          {
+            "id": "l2",
+            "text": "    pass"
+          },
+          {
+            "id": "l3",
+            "text": "try:"
+          },
+          {
+            "id": "l4",
+            "text": "    raise MyError(\"bad\")"
+          },
+          {
+            "id": "l5",
+            "text": "except MyError:"
+          },
+          {
+            "id": "l6",
+            "text": "    print(\"caught\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5",
+          "l6"
+        ]
+      },
+      "explanation": "Run in this order to print \"caught\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Raising Exceptions: write a function safe_divide that returns a divided by b, or None when b is 0.",
+      "payload": {
+        "starterCode": "def safe_divide(a, b):\n    pass",
+        "functionName": "safe_divide",
+        "tests": [
+          {
+            "input": [
+              6,
+              2
+            ],
+            "expected": 3
+          },
+          {
+            "input": [
+              1,
+              0
+            ],
+            "expected": null
+          },
+          {
+            "input": [
+              0,
+              5
+            ],
+            "expected": 0
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef safe_divide(a, b):\n    if b == 0:\n        return None\n    return a / b\n```"
+    }
+  ]
+}

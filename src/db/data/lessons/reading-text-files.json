@@ -1,0 +1,140 @@
+{
+  "slug": "reading-text-files",
+  "title": "Reading Text Files",
+  "conceptSlug": "reading-text-files",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to open and read text files in Python.”",
+      "payload": {
+        "options": [
+          "Multiple Inheritance",
+          "Reading Text Files",
+          "venv",
+          "Assertions"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Reading Text Files."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Reading Text Files” belong to?",
+      "payload": {
+        "options": [
+          "File Handling — Basic",
+          "Regular Expressions — Basics",
+          "Advanced Functions",
+          "Working with APIs & Databases"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Reading Text Files is part of File Handling — Basic."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Reading Text Files",
+      "code": "with open(\"/tmp/codelingo_predict.txt\", \"w\") as f:\n    f.write(\"hi\")\nwith open(\"/tmp/codelingo_predict.txt\") as f:\n    print(f.read())",
+      "payload": {
+        "options": [
+          "hi",
+          "hello",
+          "2",
+          "None"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"hi\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"saved\".",
+      "code": "with open(\"/tmp/codelingo_fix.txt\", \"w\") as f\n    f.write(\"hi\")\nprint(\"saved\")",
+      "payload": {
+        "options": [
+          "with open(\"/tmp/codelingo_fix.txt\", \"r\") as f:",
+          "with open(\"/tmp/codelingo_fix.txt\", \"w\") as:",
+          "open(\"/tmp/codelingo_fix.txt\", \"w\") as f:",
+          "with open(\"/tmp/codelingo_fix.txt\", \"w\") as f:"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"saved\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"saved\".",
+      "payload": {
+        "template": "with open(\"/tmp/codelingo_fill.txt\", \"{{b1}}\") as f:\n    f.write(\"hi\")\nprint(\"saved\")",
+        "bank": [
+          "w",
+          "r",
+          "a",
+          "x"
+        ],
+        "blanks": {
+          "b1": [
+            "w"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"w\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Write a file and confirm it was saved.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "with open(\"/tmp/codelingo_arrange.txt\", \"w\") as f:"
+          },
+          {
+            "id": "l2",
+            "text": "    f.write(\"hi\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(\"saved\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"saved\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Reading Text Files: write a function line_count that returns the number of lines in a string.",
+      "payload": {
+        "starterCode": "def line_count(text):\n    pass",
+        "functionName": "line_count",
+        "tests": [
+          {
+            "input": [
+              "a\nb\nc"
+            ],
+            "expected": 3
+          },
+          {
+            "input": [
+              "one line"
+            ],
+            "expected": 1
+          },
+          {
+            "input": [
+              ""
+            ],
+            "expected": 0
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef line_count(text):\n    return len(text.splitlines())\n```"
+    }
+  ]
+}

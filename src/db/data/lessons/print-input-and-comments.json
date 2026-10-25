@@ -1,0 +1,140 @@
+{
+  "slug": "print-input-and-comments",
+  "title": "print(), input(), and comments",
+  "conceptSlug": "print-input-and-comments",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to display output, receive user input, and write comments in Python.”",
+      "payload": {
+        "options": [
+          "String Basics",
+          "except",
+          "print(), input(), and comments",
+          "Logical Operators"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to print(), input(), and comments."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “print(), input(), and comments” belong to?",
+      "payload": {
+        "options": [
+          "Modules & Packages — Basics",
+          "Python Basics",
+          "Strings",
+          "Data Structures"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "print(), input(), and comments is part of Python Basics."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: print(), input(), and comments",
+      "code": "name = \"Ada\"\nage = 12\nprint(name, age)",
+      "payload": {
+        "options": [
+          "Ada, 12",
+          "Ada\n12",
+          "name age",
+          "Ada 12"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"Ada 12\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"Hello\".",
+      "code": "print(\"Hello\"",
+      "payload": {
+        "options": [
+          "print(\"Hello\")",
+          "print(Hello)",
+          "print \"Hello\"",
+          "print(\"Hello\","
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"Hello\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"Ada\".",
+      "payload": {
+        "template": "name = {{b1}}\nprint(name)",
+        "bank": [
+          "\"Ada\"",
+          "Ada",
+          "\"Bob\"",
+          "12"
+        ],
+        "blanks": {
+          "b1": [
+            "\"Ada\""
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"\\\"Ada\\\"\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Build a tiny program that stores a name and prints it.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "name = \"Ada\""
+          },
+          {
+            "id": "l2",
+            "text": "age = 12"
+          },
+          {
+            "id": "l3",
+            "text": "print(name, age)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"Ada 12\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice print(), input(), and comments: write a function greet that returns a friendly greeting for name.",
+      "payload": {
+        "starterCode": "def greet(name):\n    pass",
+        "functionName": "greet",
+        "tests": [
+          {
+            "input": [
+              "Ada"
+            ],
+            "expected": "Hello, Ada!"
+          },
+          {
+            "input": [
+              "Sam"
+            ],
+            "expected": "Hello, Sam!"
+          },
+          {
+            "input": [
+              ""
+            ],
+            "expected": "Hello, !"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n```"
+    }
+  ]
+}

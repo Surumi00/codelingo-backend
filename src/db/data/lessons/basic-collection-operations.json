@@ -1,0 +1,148 @@
+{
+  "slug": "basic-collection-operations",
+  "title": "Basic Operations on Collections",
+  "conceptSlug": "basic-collection-operations",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn common operations for accessing, modifying, searching, and iterating over collections.”",
+      "payload": {
+        "options": [
+          "Assertions",
+          "Basic Operations on Collections",
+          "Reading Text Files",
+          "venv"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to Basic Operations on Collections."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Basic Operations on Collections” belong to?",
+      "payload": {
+        "options": [
+          "Data Structures",
+          "Modules & Packages — Basics",
+          "Testing — Introduction",
+          "Advanced Exception Handling"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "Basic Operations on Collections is part of Data Structures."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Basic Operations on Collections",
+      "code": "items = [1, 2, 3]\nitems.append(4)\nprint(len(items))",
+      "payload": {
+        "options": [
+          "4",
+          "3",
+          "5",
+          "[1, 2, 3, 4]"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"4\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "items = [1, 2, 3]\nprint(items[3])",
+      "payload": {
+        "options": [
+          "print(items[0])",
+          "print(items[1])",
+          "print(items)",
+          "print(items[2])"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"1\".",
+      "payload": {
+        "template": "data = {\"a\": 1}\nprint(data[{{b1}}])",
+        "bank": [
+          "\"a\"",
+          "1",
+          "data",
+          "\"b\""
+        ],
+        "blanks": {
+          "b1": [
+            "\"a\""
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"\\\"a\\\"\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Append a value to a list and print it.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "items = [1, 2]"
+          },
+          {
+            "id": "l2",
+            "text": "items.append(3)"
+          },
+          {
+            "id": "l3",
+            "text": "print(items)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"[1, 2, 3]\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Basic Operations on Collections: write a function sum_list that returns the total of the numbers in a list.",
+      "payload": {
+        "starterCode": "def sum_list(numbers):\n    pass",
+        "functionName": "sum_list",
+        "tests": [
+          {
+            "input": [
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "expected": 6
+          },
+          {
+            "input": [
+              []
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              [
+                -2,
+                5,
+                1
+              ]
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef sum_list(numbers):\n    return sum(numbers)\n```"
+    }
+  ]
+}

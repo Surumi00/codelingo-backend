@@ -1,0 +1,140 @@
+{
+  "slug": "importing-modules",
+  "title": "Importing Modules",
+  "conceptSlug": "importing-modules",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to import and use functionality from Python modules.”",
+      "payload": {
+        "options": [
+          "Importing Modules",
+          "re Module",
+          "Classes and Objects",
+          "Abstraction"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to Importing Modules."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Importing Modules” belong to?",
+      "payload": {
+        "options": [
+          "Testing — Introduction",
+          "Advanced Exception Handling",
+          "Standard Library",
+          "Modules & Packages — Basics"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "Importing Modules is part of Modules & Packages — Basics."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Importing Modules",
+      "code": "import math\nprint(math.sqrt(9))",
+      "payload": {
+        "options": [
+          "81",
+          "3.0",
+          "3",
+          "9.0"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"3.0\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3.0\".",
+      "code": "import math\nprint(math.squre(9))",
+      "payload": {
+        "options": [
+          "print(math.sqrt[9])",
+          "print(math.sqrt \"9\")",
+          "print(math.sqrt(9))",
+          "print(sqrt(9))"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"3.0\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"4.0\".",
+      "payload": {
+        "template": "import math\nprint({{b1}}.sqrt(16))",
+        "bank": [
+          "math",
+          "random",
+          "os",
+          "sys"
+        ],
+        "blanks": {
+          "b1": [
+            "math"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"math\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Import math, use sqrt, and print the value.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import math"
+          },
+          {
+            "id": "l2",
+            "text": "value = math.sqrt(25)"
+          },
+          {
+            "id": "l3",
+            "text": "print(value)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"5.0\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Importing Modules: write a function file_name that returns the final file name from a path.",
+      "payload": {
+        "starterCode": "def file_name(path):\n    pass",
+        "functionName": "file_name",
+        "tests": [
+          {
+            "input": [
+              "a/b/c.txt"
+            ],
+            "expected": "c.txt"
+          },
+          {
+            "input": [
+              "name.py"
+            ],
+            "expected": "name.py"
+          },
+          {
+            "input": [
+              "/tmp/x"
+            ],
+            "expected": "x"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef file_name(path):\n    return path.rsplit(\"/\", 1)[-1]\n```"
+    }
+  ]
+}

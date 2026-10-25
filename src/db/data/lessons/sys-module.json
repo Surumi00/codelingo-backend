@@ -1,0 +1,143 @@
+{
+  "slug": "sys-module",
+  "title": "sys",
+  "conceptSlug": "sys-module",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to interact with the Python runtime using the sys module.”",
+      "payload": {
+        "options": [
+          "Advanced itertools",
+          "sys",
+          "Debugging Concepts",
+          "Singleton"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to sys."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “sys” belong to?",
+      "payload": {
+        "options": [
+          "Standard Library",
+          "Advanced Iterators & Generators",
+          "Memory Management & Performance",
+          "Advanced Testing & Debugging"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "sys is part of Standard Library."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: sys",
+      "code": "import math\nprint(math.floor(3.7))",
+      "payload": {
+        "options": [
+          "3",
+          "4",
+          "3.7",
+          "3.0"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"3\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "import math\nprint(math.flor(3.7))",
+      "payload": {
+        "options": [
+          "print(math.ceil(3.7))",
+          "print(floor(3.7))",
+          "print(math.floor[3.7])",
+          "print(math.floor(3.7))"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"seeded\".",
+      "payload": {
+        "template": "import random\nrandom.{{b1}}(1)\nprint(\"seeded\")",
+        "bank": [
+          "seed",
+          "choice",
+          "randint",
+          "shuffle"
+        ],
+        "blanks": {
+          "b1": [
+            "seed"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"seed\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Count letters with collections.Counter.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from collections import Counter"
+          },
+          {
+            "id": "l2",
+            "text": "counts = Counter(\"aba\")"
+          },
+          {
+            "id": "l3",
+            "text": "print(counts[\"a\"])"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"2\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice sys: write a function add that returns the sum of a and b.",
+      "payload": {
+        "starterCode": "def add(a, b):\n    pass",
+        "functionName": "add",
+        "tests": [
+          {
+            "input": [
+              2,
+              3
+            ],
+            "expected": 5
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -1,
+              5
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef add(a, b):\n    return a + b\n```"
+    }
+  ]
+}

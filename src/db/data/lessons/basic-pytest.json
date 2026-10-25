@@ -1,0 +1,148 @@
+{
+  "slug": "basic-pytest",
+  "title": "Basic pytest",
+  "conceptSlug": "basic-pytest",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn the fundamentals of writing tests using pytest.”",
+      "payload": {
+        "options": [
+          "Encapsulation",
+          "map()",
+          "JSON",
+          "Basic pytest"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The description belongs to Basic pytest."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Basic pytest” belong to?",
+      "payload": {
+        "options": [
+          "Standard Library",
+          "Advanced Iterators & Generators",
+          "Testing — Introduction",
+          "Advanced Exception Handling"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "Basic pytest is part of Testing — Introduction."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Basic pytest",
+      "code": "assert 2 + 2 == 4\nprint(\"ok\")",
+      "payload": {
+        "options": [
+          "4",
+          "assert",
+          "ok",
+          "True"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The program prints \"ok\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"ok\".",
+      "code": "assert 2 + 2 == 5\nprint(\"ok\")",
+      "payload": {
+        "options": [
+          "assert 2 * 2 == 5",
+          "assert 2 + 2 == 4",
+          "assert 2 + 2 == 5",
+          "assert 2 + 2 != 4"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The fixed code prints \"ok\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"ok\".",
+      "payload": {
+        "template": "{{b1}} 3 * 3 == 9\nprint(\"ok\")",
+        "bank": [
+          "assert",
+          "if",
+          "while",
+          "def"
+        ],
+        "blanks": {
+          "b1": [
+            "assert"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"assert\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Write and run a tiny test.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "def test_add():"
+          },
+          {
+            "id": "l2",
+            "text": "    assert 1 + 1 == 2"
+          },
+          {
+            "id": "l3",
+            "text": "test_add()"
+          },
+          {
+            "id": "l4",
+            "text": "print(\"passed\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"passed\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Basic pytest: write a function add that returns the sum of a and b.",
+      "payload": {
+        "starterCode": "def add(a, b):\n    pass",
+        "functionName": "add",
+        "tests": [
+          {
+            "input": [
+              2,
+              3
+            ],
+            "expected": 5
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -1,
+              5
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef add(a, b):\n    return a + b\n```"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "slug": "reduce-function",
+  "title": "reduce()",
+  "conceptSlug": "reduce-function",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how reduce() combines iterable values into a single result.”",
+      "payload": {
+        "options": [
+          "reduce()",
+          "Custom Context Managers",
+          "os",
+          "Better pytest Usage"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to reduce()."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “reduce()” belong to?",
+      "payload": {
+        "options": [
+          "Working with APIs & Databases",
+          "Advanced OOP",
+          "Concurrency & Parallelism",
+          "Advanced Functions"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "reduce() is part of Advanced Functions."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: reduce()",
+      "code": "def add(n):\n    return lambda x: x + n\n\nprint(add(2)(3))",
+      "payload": {
+        "options": [
+          "3",
+          "5",
+          "6",
+          "2"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"5\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"5\".",
+      "code": "def make_adder(n):\n    return lambda x: x + m\n\nprint(make_adder(2)(3))",
+      "payload": {
+        "options": [
+          "    return lambda n: x + n",
+          "    return x + n",
+          "    return lambda x: x + n",
+          "    return lambda x: x + 1"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"5\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"5\".",
+      "payload": {
+        "template": "def outer(n):\n    def inner(x):\n        return x + {{b1}}\n    return inner\n\nprint(outer(2)(3))",
+        "bank": [
+          "n",
+          "x",
+          "inner",
+          "outer"
+        ],
+        "blanks": {
+          "b1": [
+            "n"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"n\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Use map to square each number in a list.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "def square(n):"
+          },
+          {
+            "id": "l2",
+            "text": "    return n * n"
+          },
+          {
+            "id": "l3",
+            "text": "result = map(square, [1, 2])"
+          },
+          {
+            "id": "l4",
+            "text": "print(list(result))"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"[1, 4]\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice reduce(): write a function product that returns the product of all numbers in a list.",
+      "payload": {
+        "starterCode": "def product(numbers):\n    pass",
+        "functionName": "product",
+        "tests": [
+          {
+            "input": [
+              [
+                2,
+                3,
+                4
+              ]
+            ],
+            "expected": 24
+          },
+          {
+            "input": [
+              [
+                5
+              ]
+            ],
+            "expected": 5
+          },
+          {
+            "input": [
+              []
+            ],
+            "expected": 1
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef product(numbers):\n    result = 1\n    for n in numbers:\n        result *= n\n    return result\n```"
+    }
+  ]
+}

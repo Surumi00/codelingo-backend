@@ -1,0 +1,140 @@
+{
+  "slug": "pip",
+  "title": "pip",
+  "conceptSlug": "pip",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how to install and manage Python packages using pip.”",
+      "payload": {
+        "options": [
+          "pip",
+          "Basic unittest",
+          "Polymorphism",
+          "Generators and yield"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The description belongs to pip."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “pip” belong to?",
+      "payload": {
+        "options": [
+          "Object-Oriented Programming",
+          "Advanced File Handling",
+          "Testing & Debugging — Intermediate",
+          "Virtual Environments & Package Management"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "pip is part of Virtual Environments & Package Management."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: pip",
+      "code": "import sys\nprint(bool(sys.executable))",
+      "payload": {
+        "options": [
+          "sys",
+          "True",
+          "False",
+          "None"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The program prints \"True\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"3\".",
+      "code": "import sys\nprint(sys.version_info[0)",
+      "payload": {
+        "options": [
+          "print(sys.version_info)",
+          "print(sys.version_info[5])",
+          "print(sys.version_info[0])",
+          "print(sys.version)"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The fixed code prints \"3\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"3\".",
+      "payload": {
+        "template": "import sys\nprint(sys.version_info[{{b1}}])",
+        "bank": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "blanks": {
+          "b1": [
+            "0"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"0\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Print the major Python version number.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "import sys"
+          },
+          {
+            "id": "l2",
+            "text": "major = sys.version_info[0]"
+          },
+          {
+            "id": "l3",
+            "text": "print(major)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "explanation": "Run in this order to print \"3\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice pip: write a function file_name that returns the final file name from a path.",
+      "payload": {
+        "starterCode": "def file_name(path):\n    pass",
+        "functionName": "file_name",
+        "tests": [
+          {
+            "input": [
+              "a/b/c.txt"
+            ],
+            "expected": "c.txt"
+          },
+          {
+            "input": [
+              "name.py"
+            ],
+            "expected": "name.py"
+          },
+          {
+            "input": [
+              "/tmp/x"
+            ],
+            "expected": "x"
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef file_name(path):\n    return path.rsplit(\"/\", 1)[-1]\n```"
+    }
+  ]
+}

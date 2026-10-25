@@ -1,0 +1,148 @@
+{
+  "slug": "pytest-fixtures",
+  "title": "pytest Fixtures",
+  "conceptSlug": "pytest-fixtures",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how pytest fixtures provide reusable test setup and resources.”",
+      "payload": {
+        "options": [
+          "Automation — Web Scraping",
+          "pytest Fixtures",
+          "Publishing to PyPI",
+          "mypy"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "The description belongs to pytest Fixtures."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “pytest Fixtures” belong to?",
+      "payload": {
+        "options": [
+          "Advanced Testing & Debugging",
+          "Specialized Domains",
+          "Control Flow",
+          "Error Handling — Introduction"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "pytest Fixtures is part of Advanced Testing & Debugging."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: pytest Fixtures",
+      "code": "def add(a, b):\n    return a + b\n\nassert add(2, 3) == 5\nprint(\"ok\")",
+      "payload": {
+        "options": [
+          "ok",
+          "5",
+          "True",
+          "assert"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The program prints \"ok\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"ok\".",
+      "code": "def add(a, b):\n    return a - b\n\nassert add(2, 3) == 5\nprint(\"ok\")",
+      "payload": {
+        "options": [
+          "    return a * b",
+          "    return a / b",
+          "    return b - a",
+          "    return a + b"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The fixed code prints \"ok\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"ok\".",
+      "payload": {
+        "template": "import unittest\ncase = unittest.TestCase()\ncase.{{b1}}(2 + 2, 4)\nprint(\"ok\")",
+        "bank": [
+          "assertEqual",
+          "assertTrue",
+          "assertIn",
+          "assertIs"
+        ],
+        "blanks": {
+          "b1": [
+            "assertEqual"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"assertEqual\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Mock print and check it was called.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "from unittest.mock import patch"
+          },
+          {
+            "id": "l2",
+            "text": "with patch(\"builtins.print\") as fake:"
+          },
+          {
+            "id": "l3",
+            "text": "    print(\"hi\")"
+          },
+          {
+            "id": "l4",
+            "text": "print(fake.called)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"True\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice pytest Fixtures: write a function add that returns the sum of a and b.",
+      "payload": {
+        "starterCode": "def add(a, b):\n    pass",
+        "functionName": "add",
+        "tests": [
+          {
+            "input": [
+              2,
+              3
+            ],
+            "expected": 5
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -1,
+              5
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef add(a, b):\n    return a + b\n```"
+    }
+  ]
+}

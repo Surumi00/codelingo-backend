@@ -1,0 +1,153 @@
+{
+  "slug": "class-decorators",
+  "title": "Class Decorators",
+  "conceptSlug": "class-decorators",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how decorators can modify or enhance classes.”",
+      "payload": {
+        "options": [
+          "Space Complexity",
+          "REST API Design",
+          "Class Decorators",
+          "Multiprocessing"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to Class Decorators."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Class Decorators” belong to?",
+      "payload": {
+        "options": [
+          "Python Basics",
+          "Advanced Decorators & Metaprogramming",
+          "Networking & Web Development",
+          "Packaging & Deployment"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "Class Decorators is part of Advanced Decorators & Metaprogramming."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Class Decorators",
+      "code": "def wrap(fn):\n    return lambda: \"ok\"\n\nprint(wrap(lambda: \"hi\")())",
+      "payload": {
+        "options": [
+          "hi",
+          "None",
+          "wrap",
+          "ok"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"ok\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"0\".",
+      "code": "class C:\n    pass\n\nc = C()\nprint(getattr(c, \"x\"))",
+      "payload": {
+        "options": [
+          "print(getattr(c, \"x\", 0))",
+          "print(c.x)",
+          "print(setattr(c, \"x\", 0))",
+          "print(getattr(c, 0))"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"0\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"5\".",
+      "payload": {
+        "template": "print({{b1}}(\"2 + 3\"))",
+        "bank": [
+          "eval",
+          "exec",
+          "str",
+          "int"
+        ],
+        "blanks": {
+          "b1": [
+            "eval"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"eval\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Set an attribute dynamically and read it back.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "class C:"
+          },
+          {
+            "id": "l2",
+            "text": "    pass"
+          },
+          {
+            "id": "l3",
+            "text": "c = C()"
+          },
+          {
+            "id": "l4",
+            "text": "setattr(c, \"x\", 1)"
+          },
+          {
+            "id": "l5",
+            "text": "print(c.x)"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ]
+      },
+      "explanation": "Run in this order to print \"1\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Class Decorators: write a function add that returns the sum of a and b.",
+      "payload": {
+        "starterCode": "def add(a, b):\n    pass",
+        "functionName": "add",
+        "tests": [
+          {
+            "input": [
+              2,
+              3
+            ],
+            "expected": 5
+          },
+          {
+            "input": [
+              0,
+              0
+            ],
+            "expected": 0
+          },
+          {
+            "input": [
+              -1,
+              5
+            ],
+            "expected": 4
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef add(a, b):\n    return a + b\n```"
+    }
+  ]
+}

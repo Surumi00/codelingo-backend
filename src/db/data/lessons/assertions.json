@@ -1,0 +1,151 @@
+{
+  "slug": "assertions",
+  "title": "Assertions",
+  "conceptSlug": "assertions",
+  "xpReward": 10,
+  "exercises": [
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which concept matches this description?\n\n“Learn how assertions can be used to verify expected program behavior.”",
+      "payload": {
+        "options": [
+          "Decorators",
+          "Exception Chaining",
+          "Assertions",
+          "Multiple Inheritance"
+        ],
+        "correctIndex": 2
+      },
+      "explanation": "The description belongs to Assertions."
+    },
+    {
+      "type": "MULTIPLE_CHOICE",
+      "prompt": "Which topic does “Assertions” belong to?",
+      "payload": {
+        "options": [
+          "Advanced Iterators & Generators",
+          "Testing — Introduction",
+          "Advanced Exception Handling",
+          "Standard Library"
+        ],
+        "correctIndex": 1
+      },
+      "explanation": "Assertions is part of Testing — Introduction."
+    },
+    {
+      "type": "PREDICT_OUTPUT",
+      "prompt": "What does this program print?\n\nPracticing: Assertions",
+      "code": "assert 2 + 2 == 4\nprint(\"ok\")",
+      "payload": {
+        "options": [
+          "True",
+          "4",
+          "assert",
+          "ok"
+        ],
+        "correctIndex": 3
+      },
+      "explanation": "The program prints \"ok\"."
+    },
+    {
+      "type": "FIX_BUG",
+      "prompt": "Which line fixes the bug? The code should print \"ok\".",
+      "code": "assert 2 + 2 == 5\nprint(\"ok\")",
+      "payload": {
+        "options": [
+          "assert 2 + 2 == 4",
+          "assert 2 + 2 == 5",
+          "assert 2 + 2 != 4",
+          "assert 2 * 2 == 5"
+        ],
+        "correctIndex": 0
+      },
+      "explanation": "The fixed code prints \"ok\"."
+    },
+    {
+      "type": "FILL_BLANK",
+      "prompt": "Fill in the blank. The code should print \"ok\".",
+      "payload": {
+        "template": "{{b1}} 3 * 3 == 9\nprint(\"ok\")",
+        "bank": [
+          "assert",
+          "if",
+          "while",
+          "def"
+        ],
+        "blanks": {
+          "b1": [
+            "assert"
+          ]
+        }
+      },
+      "explanation": "Replacing the blank with \"assert\" produces the expected output."
+    },
+    {
+      "type": "ARRANGE_LINES",
+      "prompt": "Write and run a tiny test.",
+      "payload": {
+        "lines": [
+          {
+            "id": "l1",
+            "text": "def test_add():"
+          },
+          {
+            "id": "l2",
+            "text": "    assert 1 + 1 == 2"
+          },
+          {
+            "id": "l3",
+            "text": "test_add()"
+          },
+          {
+            "id": "l4",
+            "text": "print(\"passed\")"
+          }
+        ],
+        "correctOrder": [
+          "l1",
+          "l2",
+          "l3",
+          "l4"
+        ]
+      },
+      "explanation": "Run in this order to print \"passed\"."
+    },
+    {
+      "type": "WRITE_CODE",
+      "prompt": "Practice Assertions: write a function is_even that returns True when number is even.",
+      "payload": {
+        "starterCode": "def is_even(number):\n    pass",
+        "functionName": "is_even",
+        "tests": [
+          {
+            "input": [
+              2
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              7
+            ],
+            "expected": false
+          },
+          {
+            "input": [
+              0
+            ],
+            "expected": true
+          },
+          {
+            "input": [
+              -4
+            ],
+            "expected": true
+          }
+        ]
+      },
+      "explanation": "Reference solution:\n\n```python\ndef is_even(number):\n    return number % 2 == 0\n```"
+    }
+  ]
+}
