@@ -8,6 +8,7 @@ import diagnosticRouter from "./routes/diagnosticRoutes.js";
 import syllabusRouter from "./routes/syllabusRoutes.js";
 import lessonRouter from "./routes/lessonRoutes.js";
 import exerciseRouter from "./routes/exerciseRoutes.js";
+import chatRouter from "./routes/chatRoutes.js";
 
 
 const app = express();
@@ -26,6 +27,7 @@ app.use("/diagnostic", diagnosticRouter);
 app.use("/api/syllabus", syllabusRouter);
 app.use("/lessons", lessonRouter);
 app.use("/exercises", exerciseRouter);
+app.use("/chat", chatRouter);
 
 app.use(errorHandler);
 

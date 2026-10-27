@@ -79,6 +79,25 @@ curl -X POST http://localhost:3000/auth/login \
   -d '{"email":"ada@example.com","password":"secret123"}'
 ```
 
+## AI Chat
+
+`POST /chat` requires a bearer token and accepts an optional short history:
+
+```bash
+curl -X POST http://localhost:3000/chat \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"message":"Explain a for loop","history":[{"role":"user","content":"I am new to Python"}]}'
+```
+
+Progress questions such as "How was my last week?" return a deterministic quick
+summary from the user's saved data. Other questions use `OPENROUTER_API_KEY`,
+`OPENROUTER_CHAT_MODEL` (default `xingchen-agi/xing4.0-29b-a4b:free`), and
+`OPENROUTER_FALLBACK_MODEL` (default `openrouter/free`). Both are free models;
+reasoning is disabled for chat. Chat is limited to 20 messages per hour and 60
+per day per user, plus `CHAT_DAILY_GLOBAL_LIMIT` (default 500) messages per day
+across all users. Upstream OpenRouter rate limits also return a friendly 429.
+
 ## Production
 
 Build the project:
