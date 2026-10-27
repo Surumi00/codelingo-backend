@@ -30,6 +30,7 @@ export async function getOrderedLessons(): Promise<OrderedLesson[]> {
       title: lessons.title,
       order: lessons.order,
       xpReward: lessons.xpReward,
+      levelId: syllabusLevels.id,
     })
     .from(lessons)
     .innerJoin(syllabusConcepts, eq(lessons.conceptId, syllabusConcepts.id))

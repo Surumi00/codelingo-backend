@@ -1,5 +1,5 @@
 import type { Response } from "express";
-import { and, asc, eq, isNull, sql } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, isNull, sql } from "drizzle-orm";
 import { db } from "../db/index.js";
 import {
   exerciseAttempts,
@@ -79,6 +79,10 @@ export async function getLesson(req: AuthRequest, res: Response) {
 }
 
 // POST /lessons/:id/start
+// Resumes the learner's most progressed open session for this lesson so an
+// interrupted attempt keeps its answered exercises; a new session is only
+// created when no session is open (e.g. the first start or a replay after
+// completion). `completedExerciseIds` lets the frontend restore its queue.
 export async function startLesson(req: AuthRequest, res: Response) {
   try {
     if (!req.userId) {
@@ -97,12 +101,80 @@ export async function startLesson(req: AuthRequest, res: Response) {
         .json({ error: { message: "This lesson is locked" } });
     }
 
-    const [session] = await db
-      .insert(lessonSessions)
-      .values({ userId: req.userId, lessonId: lesson.id })
-      .returning({ id: lessonSessions.id });
+    const openSessions = await db
+      .select({ id: lessonSessions.id, startedAt: lessonSessions.startedAt })
+      .from(lessonSessions)
+      .where(
+        and(
+          eq(lessonSessions.userId, req.userId),
+          eq(lessonSessions.lessonId, lesson.id),
+          isNull(lessonSessions.completedAt),
+        ),
+      )
+      .orderBy(desc(lessonSessions.startedAt));
 
-    res.status(201).json({ sessionId: session.id });
+    let sessionId: string;
+    const completedExerciseIds = new Set<string>();
+
+    if (openSessions.length === 0) {
+      const [session] = await db
+        .insert(lessonSessions)
+        .values({ userId: req.userId, lessonId: lesson.id })
+        .returning({ id: lessonSessions.id });
+
+      sessionId = session.id;
+    } else {
+      // Older data can contain several open sessions per lesson; resume the
+      // one with the most correct exercises, breaking ties toward the most
+      // recent start.
+      const correctAttempts = await db
+        .select({
+          sessionId: exerciseAttempts.sessionId,
+          exerciseId: exerciseAttempts.exerciseId,
+        })
+        .from(exerciseAttempts)
+        .where(
+          and(
+            inArray(
+              exerciseAttempts.sessionId,
+              openSessions.map((session) => session.id),
+            ),
+            eq(exerciseAttempts.correct, true),
+          ),
+        );
+
+      const correctBySession = new Map<string, Set<string>>();
+
+      for (const attempt of correctAttempts) {
+        const exercises = correctBySession.get(attempt.sessionId) ?? new Set();
+
+        exercises.add(attempt.exerciseId);
+        correctBySession.set(attempt.sessionId, exercises);
+      }
+
+      let bestSession = openSessions[0];
+      let bestCount = correctBySession.get(bestSession.id)?.size ?? 0;
+
+      for (const session of openSessions.slice(1)) {
+        const count = correctBySession.get(session.id)?.size ?? 0;
+
+        if (count > bestCount) {
+          bestSession = session;
+          bestCount = count;
+        }
+      }
+
+      sessionId = bestSession.id;
+
+      for (const exerciseId of correctBySession.get(sessionId) ?? []) {
+        completedExerciseIds.add(exerciseId);
+      }
+    }
+
+    res.status(201).json({
+      sessionId,
+      completedExerciseIds: [...completedExerciseIds],
+    });
   } catch (error) {
     console.error("Error starting lesson:", error);
 
